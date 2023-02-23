@@ -2,7 +2,7 @@ import React from 'react';
 import css from '../styles/Footer.module.css';
 import { UilFacebook, UilGithub, UilInstagram } from '@iconscout/react-unicons';
 import Image from 'next/image';
-import Logo from "../assets/logo.png";
+// import Logo from "../assets/logo.png";
 import Link from 'next/link';
 
 export default function Footer(){
@@ -16,7 +16,7 @@ export default function Footer(){
       </div>
       <Link href="/">
         <div className={css.logo}>
-          <Image src={Logo} alt=""  width={200} height={110} />
+          {/* <Image src={Logo} alt=""  width={200} height={110} /> */}
           {/* <span>Under Belly</span> */}
         </div>
       </Link>
