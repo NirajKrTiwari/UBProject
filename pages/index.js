@@ -9,7 +9,7 @@ import Layout from "../components/Layout";
 
 export default function Home() {
   return (
-    <Layout>
+  
       <div className="">
         <Head>
           <title>Under Belly</title>
@@ -21,7 +21,7 @@ export default function Home() {
           <h1>Hiiii</h1>
         </main>
       </div>
-      </Layout>
+
   );
 }
 
