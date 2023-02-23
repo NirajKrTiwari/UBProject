@@ -1,7 +1,7 @@
 import React from 'react';
-import css from "../styles/Header.module.css";
+//import css from "../styles/Header.module.css";
 import Image from'next/image';
-import Logo from "../assets/logo.png"; 
+// import Logo from "../assets/logo.png"; 
 import { UilShoppingBag } from '@iconscout/react-unicons';
 //import {useStore} from "../store/store";
 import Link from 'next/link';
@@ -18,7 +18,7 @@ export default function Header (){
     <div className={css.header}>
       <Link href="/">
       <div className={css.logo}>
-       <Image src={Logo} alt="" width={200} height={110}/>
+       {/* <Image src={Logo} alt="" width={200} height={110}/> */}
        {/* <span>Under Belly</span> */}
         </div>
         </Link>
