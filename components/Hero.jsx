@@ -2,7 +2,7 @@ import React from 'react';
 import css from '../styles/Hero.module.css';
 import Image from 'next/image';
 import Cherry from '../assets/Cherry.png';
-import HeroImage from '../assets/heroImage.png';
+// import HeroImage from '../assets/heroImage.png';
 import { UilPhone } from '@iconscout/react-unicons';
 import Pizzal from '../assets/p1.jpg';
 import Link from 'next/link';
@@ -13,7 +13,7 @@ export default function Hero(){
         <div className={css.left}>
         <div className={css.cherryDiv}>
             <span>More than Faster</span>
-            <Image src={Cherry} alt="" width={40} height={25}/>
+            {/* <Image src={Cherry} alt="" width={40} height={25}/> */}
         </div>
         <div className={css.heroText}>
           <span>Be The Fastest</span>
