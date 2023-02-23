@@ -1,14 +1,15 @@
 import Head from "next/head";
 // import Hero from "../components/Hero";
-// import Layout from "../components/Layout";
+import Layout from "../components/Layout";
 //import css from "../styles/Home.module.css";
 //import Services from "../components/Services";
 //import {client} from "../lib/client";
 //import Menu from "../components/Menu";
 
 
-export default function Home({ub}) {
+export default function Home() {
   return (
+    <Layout>
       <div className="">
         <Head>
           <title>Under Belly</title>
@@ -17,10 +18,10 @@ export default function Home({ub}) {
         </Head>
         {/* body */}
         <main>
-<h1>Hiiii</h1>
+          <h1>Hiiii</h1>
         </main>
       </div>
-      
+      </Layout>
   );
 }
 
