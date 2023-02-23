@@ -1,5 +1,5 @@
 import Head from "next/head";
-// import Hero from "../components/Hero";
+import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 //import css from "../styles/Home.module.css";
 //import Services from "../components/Services";
@@ -18,7 +18,7 @@ export default function Home() {
         </Head>
         {/* body */}
         <main>
-          <h1>Hiiii JS</h1>
+          <Hero/>
         </main>
       </div>
       </Layout>
