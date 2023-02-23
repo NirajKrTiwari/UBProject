@@ -47,9 +47,9 @@ export default function Food({ food }){
                             <Image src={RightArrow} height={20} width={20} alt="" objectFit='contain' onClick={()=>handleQuan("inc")}/>
                         </div>
                     </div>
-                    {/* <div className={`btn ${css.btn}`} onClick={addToCart}>
+                    <div className={`btn ${css.btn}`} onClick="">
                         Add to Cart
-                    </div> */}
+                    </div>
                 </div>
                 <Toaster/>
             </div>
@@ -86,7 +86,7 @@ export async function getStaticPaths() {
 
     return {
         paths: paths.map((slug) => ({ params: { slug } })),
-        fallback: true,
+        fallback: "blocking",
     };
 }
 
@@ -95,8 +95,7 @@ export async function getStaticProps(context) {
     const food = await client.fetch(
         `
       *[_type == "underbelly" && slug.current == $slug][0]
-    `,
-        { slug }
+    // `,{ slug }
     );
     return {
         props: {
