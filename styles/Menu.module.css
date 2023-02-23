@@ -1,0 +1,74 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+    gap:3rem;
+    margin-top: 6rem;
+}
+.heading
+{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    justify-content: flex-start;
+}
+.heading>:nth-child(1)
+{
+    font-size: 1.4rem;
+    color: var(--themeRed);
+    margin-bottom: 1rem;
+}
+.heading>:nth-child(2),.heading>:nth-child(3)
+{
+    font-size: 2rem;
+    color: var(--themeBlack);
+}
+.ImageWrapper
+{
+    height: 16rem;
+    width: 22rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
+}
+.menu
+{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+.food
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.food>:nth-child(2),.food>:nth-child(3)
+{
+    padding-left: 2rem;
+}
+.ImageWrapper>span>img:hover{
+    transform: scale(1.1);
+}
+.food:hover
+{
+    cursor: pointer;
+}
+@media only screen and (max-width: 900px) and (min-width: 730px)  {
+    .ImageWrapper
+    {
+        width: 19rem;
+    }
+    .food>:nth-child(2),.food>:nth-child(3)
+    {
+        padding-left: 1rem;
+        font-size: 1.4rem;
+    }
+}
