@@ -18,7 +18,7 @@ export default function Home() {
         </Head>
         {/* body */}
         <main>
-          <h1>Hiiii</h1>
+          <h1>Hiiii JS</h1>
         </main>
       </div>
 
