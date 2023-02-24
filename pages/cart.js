@@ -2,36 +2,33 @@ import Layout from "../components/Layout";
 import { urlFor } from "../lib/client";
 import css from '../styles/Cart.module.css';
 import Image from 'next/image';
+import { useStore } from "../store/store";
 import toast,{Toaster} from 'react-hot-toast';
-import { useStore } from '../store/store';
-//import { useState } from "react";
-// import OrderModal from "../components/OrderModal";
+import { useState } from "react";
+//import OrderModal from "../components/OrderModal";
 
 export default function cart (){
-   const CartData= useStore((state)=>state.cart);
-   console.log(CartData);
-    // const removeFood =useStore((state)=>state.removeFood);
-    // // const [PaymentMethod, setPaymentMethod] = useState(null);
-    // const handleRemove=(i)=>
-    // {
-    //     removeFood(i);
-    //     toast.error('Item Removed');
-    // }
-    //  const total=()=>CartData.food.reduce((a,b)=>a+b.quantity*b.price,0);
+    const CartData= useStore((state)=>state.cart);
+    const removeFood =useStore((state)=>state.removeFood);
+    const [PaymentMethod, setPaymentMethod] = useState(null);
+    const handleRemove=(i)=>
+    {
+        removeFood(i);
+        toast.error('Item Removed');
+    }
+    const total=()=>CartData.food.reduce((a,b)=>a+b.quantity*b.price,0);
 
-    // const handleOnDelivery=()=>
-    // {
-    //     setPaymentMethod(0);
-    //     typeof window !== 'undefined' && localStorage.setItem('total',total());
-    //     toast.success('Payment Method Selected');
-    // }
-
+    const handleOnDelivery=()=>
+    {
+        setPaymentMethod(0);
+        typeof window !== 'undefined' && localStorage.setItem('total',total());
+        toast.success('Payment Method Selected');
+    }
     return(
         <Layout>
-            {/* <div className={css.container}>
+            <div className={css.container}>
                 <div className={css.details}>
                 <table className={css.table}>
-
                         <thead>
                             <tr>
                             <th>Food</th>
@@ -40,9 +37,8 @@ export default function cart (){
                             <th>Quantity</th>
                             <th>Total</th>
                             </tr>
-                        </thead> */}
-
-                        {/* <tbody className={css.tbody}>
+                        </thead>
+                        <tbody className={css.tbody}>
                             {CartData.food.length>0 && 
                                 CartData.food.map((food,i)=>{
                                     const src=urlFor(food.image).url()
@@ -74,30 +70,26 @@ export default function cart (){
                                     </tr>
                                 )}
                             )}
-                        </tbody> */}
-
-                    {/* </table>
-
+                        </tbody>
+                    </table>
                 </div>
-
-
                 <div className={css.cart}>
                    <span>Cart</span>
                    <div className={css.CartDetails}>
-                    <div> */}
-                        {/* <span>Items</span><span>{CartData.food.length}</span> */}
-                    {/* </div>
                     <div>
-                        <span>Total</span> */}
-                        {/* <span>Rs. {total()}</span> */}
-                    {/* </div>
+                        <span>Items</span><span>{CartData.food.length}</span>
+                    </div>
+                    <div>
+                        <span>Total</span>
+                        <span>Rs. {total()}</span>
+                    </div>
                    </div>
-                   <div className={css.button}> */}
-                    {/* <button className="btn" onClick={handleOnDelivery}>Pay on Delivery</button> */}
-                    {/* <button className="btn">Pay Now</button>
+                   <div className={css.button}>
+                    <button className="btn" onClick={handleOnDelivery}>Pay on Delivery</button>
+                    <button className="btn">Pay Now</button>
                    </div>
                 </div>
-            </div> */}
+            </div>
             <Toaster/>
 
             {/* Modal */}
