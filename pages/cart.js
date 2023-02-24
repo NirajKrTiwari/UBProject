@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import { urlFor } from "../lib/client";
 import css from '../styles/Cart.module.css';
 import Image from 'next/image';
-import { useStore } from "../store/store";
+import {useStore} from '../store/store';
 import toast,{Toaster} from 'react-hot-toast';
 //import { useState } from "react";
 // import OrderModal from "../components/OrderModal";
@@ -76,7 +76,7 @@ export default function cart (){
                         </tbody>
 
                     </table>
-                    
+
                 </div>
                 <div className={css.cart}>
                    <span>Cart</span>
