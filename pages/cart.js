@@ -2,13 +2,13 @@ import Layout from "../components/Layout";
 import { urlFor } from "../lib/client";
 import css from '../styles/Cart.module.css';
 import Image from 'next/image';
-import {useStore} from '../store/store';
+import { useStore } from '../store/store';
 import toast,{Toaster} from 'react-hot-toast';
 //import { useState } from "react";
 // import OrderModal from "../components/OrderModal";
 
 export default function cart (){
-    const CartData= useStore((state)=>state.cart);
+    const CartData= useStore((state)=>state.cart)
     // const removeFood =useStore((state)=>state.removeFood);
     // // const [PaymentMethod, setPaymentMethod] = useState(null);
     // const handleRemove=(i)=>
@@ -68,8 +68,8 @@ export default function cart (){
                                         <td>
                                             {food.price*food.quantity}
                                         </td>
-                                        <td style={{color:'var(--themeRed)',cursor:'pointer'}} 
-                                        onClick={()=>handleRemove(i)}>x</td>
+                                        {/* <td style={{color:'var(--themeRed)',cursor:'pointer'}} 
+                                        onClick={()=>handleRemove(i)}>x</td> */}
                                     </tr>
                                 )}
                             )}
