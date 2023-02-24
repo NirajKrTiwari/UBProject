@@ -8,15 +8,15 @@ import toast,{Toaster} from 'react-hot-toast';
 // import OrderModal from "../components/OrderModal";
 
 export default function cart (){
-    const CartData= useStore((state)=>state.cart);
-    const removeFood =useStore((state)=>state.removeFood);
-    // const [PaymentMethod, setPaymentMethod] = useState(null);
-    const handleRemove=(i)=>
-    {
-        removeFood(i);
-        toast.error('Item Removed');
-    }
-     const total=()=>CartData.food.reduce((a,b)=>a+b.quantity*b.price,0);
+    // const CartData= useStore((state)=>state.cart);
+    // const removeFood =useStore((state)=>state.removeFood);
+    // // const [PaymentMethod, setPaymentMethod] = useState(null);
+    // const handleRemove=(i)=>
+    // {
+    //     removeFood(i);
+    //     toast.error('Item Removed');
+    // }
+    //  const total=()=>CartData.food.reduce((a,b)=>a+b.quantity*b.price,0);
 
     // const handleOnDelivery=()=>
     // {
@@ -41,7 +41,7 @@ export default function cart (){
                             </tr>
                         </thead>
 
-                        <tbody className={css.tbody}>
+                        {/* <tbody className={css.tbody}>
                             {CartData.food.length>0 && 
                                 CartData.food.map((food,i)=>{
                                     const src=urlFor(food.image).url()
@@ -73,7 +73,7 @@ export default function cart (){
                                     </tr>
                                 )}
                             )}
-                        </tbody>
+                        </tbody> */}
 
                     </table>
 
@@ -84,11 +84,11 @@ export default function cart (){
                    <span>Cart</span>
                    <div className={css.CartDetails}>
                     <div>
-                        <span>Items</span><span>{CartData.food.length}</span>
+                        {/* <span>Items</span><span>{CartData.food.length}</span> */}
                     </div>
                     <div>
                         <span>Total</span>
-                        <span>Rs. {total()}</span>
+                        {/* <span>Rs. {total()}</span> */}
                     </div>
                    </div>
                    <div className={css.button}>
