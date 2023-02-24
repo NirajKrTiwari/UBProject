@@ -11,16 +11,17 @@ export const useStore = create((set) => ({
         cart:{
             food:[...state.cart.food, data]
         }
-    }))
+    })),
+
     //remove food from cart
-    // removeFood :(index)=>
-    // set((state)=>
-    // ({
-    //     cart:{
-    //         food:state.cart.food.filter((_,i)=>i!==index)
-    //     }
-    // })
-    // ),
+    removeFood :(index)=>
+    set((state)=>
+    ({
+        cart:{
+            food:state.cart.food.filter((_,i)=>i!==index)
+        }
+    })
+    ),
 
     // resetCart:()=>
     // set(()=>(
