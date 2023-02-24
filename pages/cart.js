@@ -16,7 +16,7 @@ export default function cart (){
         removeFood(i);
         toast.error('Item Removed');
     }
-    const total=()=>CartData.food.reduce((a,b)=>a+b.quantity*b.price,0);
+     const total=()=>CartData.food.reduce((a,b)=>a+b.quantity*b.price,0);
 
     // const handleOnDelivery=()=>
     // {
@@ -78,6 +78,8 @@ export default function cart (){
                     </table>
 
                 </div>
+
+
                 <div className={css.cart}>
                    <span>Cart</span>
                    <div className={css.CartDetails}>
