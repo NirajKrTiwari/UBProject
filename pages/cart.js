@@ -9,7 +9,6 @@ import toast,{Toaster} from 'react-hot-toast';
 
 export default function cart (){
    // const CartData= useStore((state)=>state.cart);
-    const items= useStore((state)=>state.cart.food.length);
     // const removeFood =useStore((state)=>state.removeFood);
     // // const [PaymentMethod, setPaymentMethod] = useState(null);
     // const handleRemove=(i)=>
