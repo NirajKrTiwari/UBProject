@@ -21,7 +21,7 @@ export const useStore = create((set) => ({
             food:state.cart.food.filter((_,i)=>i!==index)
         }
     })
-    ),
+    )
 
     // resetCart:()=>
     // set(()=>(
