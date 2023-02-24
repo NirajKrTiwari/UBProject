@@ -24,11 +24,13 @@ export default function cart (){
     //     typeof window !== 'undefined' && localStorage.setItem('total',total());
     //     toast.success('Payment Method Selected');
     // }
+
     return(
         <Layout>
             <div className={css.container}>
                 <div className={css.details}>
                 <table className={css.table}>
+
                         <thead>
                             <tr>
                             <th>Food</th>
@@ -38,6 +40,7 @@ export default function cart (){
                             <th>Total</th>
                             </tr>
                         </thead>
+
                         <tbody className={css.tbody}>
                             {CartData.food.length>0 && 
                                 CartData.food.map((food,i)=>{
@@ -71,7 +74,9 @@ export default function cart (){
                                 )}
                             )}
                         </tbody>
+
                     </table>
+                    
                 </div>
                 <div className={css.cart}>
                    <span>Cart</span>
