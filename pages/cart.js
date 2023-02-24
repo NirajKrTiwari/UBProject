@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import { urlFor } from "../lib/client";
 import css from '../styles/Cart.module.css';
 import Image from 'next/image';
-import { useStore } from '../store/store';
+import {useStore} from "../store/store";
 import toast,{Toaster} from 'react-hot-toast';
 //import { useState } from "react";
 // import OrderModal from "../components/OrderModal";
@@ -41,7 +41,7 @@ export default function cart (){
                             </tr>
                         </thead>
 
-                        <tbody className={css.tbody}>
+                        {/* <tbody className={css.tbody}>
                             {CartData.food.length>0 && 
                                 CartData.food.map((food,i)=>{
                                     const src=urlFor(food.image).url()
@@ -68,12 +68,12 @@ export default function cart (){
                                         <td>
                                             {food.price*food.quantity}
                                         </td>
-                                        {/* <td style={{color:'var(--themeRed)',cursor:'pointer'}} 
-                                        onClick={()=>handleRemove(i)}>x</td> */}
+                                        <td style={{color:'var(--themeRed)',cursor:'pointer'}} 
+                                        onClick={()=>handleRemove(i)}>x</td>
                                     </tr>
                                 )}
                             )}
-                        </tbody>
+                        </tbody> */}
 
                     </table>
 
