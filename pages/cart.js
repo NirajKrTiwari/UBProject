@@ -28,7 +28,7 @@ export default function cart (){
 
     return(
         <Layout>
-            <div className={css.container}>
+            {/* <div className={css.container}>
                 <div className={css.details}>
                 <table className={css.table}>
 
@@ -40,7 +40,7 @@ export default function cart (){
                             <th>Quantity</th>
                             <th>Total</th>
                             </tr>
-                        </thead>
+                        </thead> */}
 
                         {/* <tbody className={css.tbody}>
                             {CartData.food.length>0 && 
@@ -76,7 +76,7 @@ export default function cart (){
                             )}
                         </tbody> */}
 
-                    </table>
+                    {/* </table>
 
                 </div>
 
@@ -84,20 +84,20 @@ export default function cart (){
                 <div className={css.cart}>
                    <span>Cart</span>
                    <div className={css.CartDetails}>
-                    <div>
+                    <div> */}
                         {/* <span>Items</span><span>{CartData.food.length}</span> */}
-                    </div>
+                    {/* </div>
                     <div>
-                        <span>Total</span>
+                        <span>Total</span> */}
                         {/* <span>Rs. {total()}</span> */}
-                    </div>
+                    {/* </div>
                    </div>
-                   <div className={css.button}>
+                   <div className={css.button}> */}
                     {/* <button className="btn" onClick={handleOnDelivery}>Pay on Delivery</button> */}
-                    <button className="btn">Pay Now</button>
+                    {/* <button className="btn">Pay Now</button>
                    </div>
                 </div>
-            </div>
+            </div> */}
             <Toaster/>
 
             {/* Modal */}
