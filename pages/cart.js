@@ -8,7 +8,7 @@ import toast,{Toaster} from 'react-hot-toast';
 // import OrderModal from "../components/OrderModal";
 
 export default function cart (){
-    // const CartData= useStore((state)=>state.cart);
+    const CartData= useStore((state)=>state.cart);
     // const removeFood =useStore((state)=>state.removeFood);
     // // const [PaymentMethod, setPaymentMethod] = useState(null);
     // const handleRemove=(i)=>
@@ -41,7 +41,7 @@ export default function cart (){
                             </tr>
                         </thead>
 
-                        {/* <tbody className={css.tbody}>
+                        <tbody className={css.tbody}>
                             {CartData.food.length>0 && 
                                 CartData.food.map((food,i)=>{
                                     const src=urlFor(food.image).url()
@@ -73,7 +73,7 @@ export default function cart (){
                                     </tr>
                                 )}
                             )}
-                        </tbody> */}
+                        </tbody>
 
                     </table>
 
