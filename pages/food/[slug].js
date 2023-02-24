@@ -5,7 +5,7 @@ import Image from 'next/image';
 import LeftArrow from '../../assets/arrowLeft.png';
 import RightArrow from '../../assets/arrowRight.png';
 import { useState } from 'react';
-// import { useStore } from '../../store/store';
+import { useStore } from '../../store/store';
 import toast,{Toaster} from 'react-hot-toast';
 export default function Food({ food }){
     const src = urlFor(food.image).url();
@@ -14,12 +14,12 @@ export default function Food({ food }){
         type == "inc" ? setQuantity((prev) => prev + 1) : quantity === 1 ? null : setQuantity((prev) => prev - 1);
     }
 
-    //add tp cart function
-    // const addFood=useStore((state)=>state.addFood)
-    // const addToCart = () => {
-    //     addFood({...food,price: food.price,quantity: quantity})
-    //     toast.success("Added to Cart")
-    // }
+    //add to cart function
+    const addFood=useStore((state)=>state.addFood)
+    const addToCart = () => {
+        addFood({...food,price: food.price,quantity: quantity})
+        toast.success("Added to Cart")
+    }
 
     return (
         <Layout>
@@ -47,7 +47,7 @@ export default function Food({ food }){
                             <Image src={RightArrow} height={20} width={20} alt="" objectFit='contain' onClick={()=>handleQuan("inc")}/>
                         </div>
                     </div>
-                    <div className={`btn ${css.btn}`} onClick="">
+                    <div className={`btn ${css.btn}`} onClick={addToCart}>
                         Add to Cart
                     </div>
                 </div>

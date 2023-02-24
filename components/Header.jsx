@@ -3,8 +3,16 @@ import Image from 'next/image';
 import Logo from '../assets/Logo.png';
 import Link from 'next/link';
 import { UilShoppingBag } from '@iconscout/react-unicons';
+import {useStore} from "../store/store";
+import { useEffect, useState } from 'react';
+import { UilReceipt } from '@iconscout/react-unicons';
 export default function Header()
 {
+  const items= useStore((state)=>state.cart.food.length);
+  const [Order, setOrder] = useState("")
+  useEffect(() => {
+  setOrder(localStorage.getItem("order"));
+  },[])
     return(
         <div className={css.header}>
         <Link href="/">
@@ -22,7 +30,7 @@ export default function Header()
             <Link href='/cart'>
             <div className={css.cart}>
               <UilShoppingBag size={35} color="#2E2E2E"/>
-              <div className={css.badge}>2</div>
+              <div className={css.badge}>{items}</div>
             </div>
             </Link>
   
