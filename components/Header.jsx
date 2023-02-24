@@ -4,15 +4,15 @@ import Logo from '../assets/Logo.png';
 import Link from 'next/link';
 import { UilShoppingBag } from '@iconscout/react-unicons';
 import {useStore} from "../store/store";
-import { useEffect, useState } from 'react';
-import { UilReceipt } from '@iconscout/react-unicons';
+// import { useEffect, useState } from 'react';
+// import { UilReceipt } from '@iconscout/react-unicons';
 export default function Header()
 {
   const items= useStore((state)=>state.cart.food.length);
-  const [Order, setOrder] = useState("")
-  useEffect(() => {
-  setOrder(localStorage.getItem("order"));
-  },[])
+  // const [Order, setOrder] = useState("")
+  // useEffect(() => {
+  // setOrder(localStorage.getItem("order"));
+  // },[])
     return(
         <div className={css.header}>
         <Link href="/">
