@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function cart (){
     const CartData= useStore((state)=>state.cart);
     const removeFood =useStore((state)=>state.removeFood);
-    const [PaymentMethod, setPaymentMethod] = useState(null);
+    //const [PaymentMethod, setPaymentMethod] = useState(null);
     const handleRemove=(i)=>
     {
         removeFood(i);
