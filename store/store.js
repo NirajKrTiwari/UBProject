@@ -1,4 +1,4 @@
-import create from 'zustand'
+import create from 'zustand';
 
 export const useStore = create((set) => ({
     //cart
@@ -21,13 +21,12 @@ export const useStore = create((set) => ({
             food:state.cart.food.filter((_,i)=>i!==index)
         }
     })
-    )
-
-    // resetCart:()=>
-    // set(()=>(
-    //     {
-    //         food:[]
-    //     }
-    // ))
+    ),
+    resetCart:()=>
+    set(()=>(
+        {
+            food:[]
+        }
+    ))
 })
 )
