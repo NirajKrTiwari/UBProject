@@ -9,6 +9,7 @@ import {useStore} from "../store/store";
 export default function Header()
 {
   const items= useStore((state)=>state.cart.food.length);
+  const CartData= useStore((state)=>state.cart);
   // const [Order, setOrder] = useState("")
   // useEffect(() => {
   // setOrder(localStorage.getItem("order"));
