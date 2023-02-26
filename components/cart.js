@@ -1,6 +1,7 @@
-import { useStore } from "../store/store";
+import {useStore} from "../store/store";
 export default function cart (){
-     const CartData= useStore((state)=>state.cart);
+     const items= useStore((state)=>state.cart.food.length);
+     console.log(items);
     return(
-    <div>Hello</div>
+    <div>{items}</div>
     )}
