@@ -4,7 +4,7 @@ import css from '../styles/Cart.module.css';
 import Image from 'next/image';
 import { useStore } from "../store/store";
 import toast,{Toaster} from 'react-hot-toast';
-import { useState } from "react";
+//import { useState } from "react";
 //import OrderModal from "../components/OrderModal";
 
 export default function cart (){
