@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useStore } from "../store/store";
 import toast,{Toaster} from 'react-hot-toast';
 import { useState } from "react";
-//import OrderModal from "../components/OrderModal";
+import OrderModal from "../components/OrderModal";
 
 export default function Cart (){
     const CartData= useStore((state)=>state.cart);
