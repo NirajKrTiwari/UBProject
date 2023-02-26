@@ -4,13 +4,13 @@ import css from '../styles/Cart.module.css';
 import Image from 'next/image';
 import { useStore } from "../store/store";
 import toast,{Toaster} from 'react-hot-toast';
-//import { useState } from "react";
+import { useState } from "react";
 //import OrderModal from "../components/OrderModal";
 
 export default function Cart (){
     const CartData= useStore((state)=>state.cart);
     const removeFood =useStore((state)=>state.removeFood);
-    //const [PaymentMethod, setPaymentMethod] = useState(null);
+    const [PaymentMethod, setPaymentMethod] = useState(null);
     const handleRemove=(i)=>
     {
         removeFood(i);
@@ -94,11 +94,11 @@ export default function Cart (){
 
             {/* Modal */}
 
-            {/* <OrderModal
+            <OrderModal
             opened={PaymentMethod === 0}
             setOpened={setPaymentMethod}
             PaymentMethod ={PaymentMethod}
-            /> */}
+            />
         </Layout>
     )
   
