@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'UnderBelly',
 
-  projectId: process.env.PROJECT_ID,
+  projectId: '5stz9231',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],

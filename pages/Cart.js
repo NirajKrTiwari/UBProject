@@ -7,7 +7,7 @@ import toast,{Toaster} from 'react-hot-toast';
 import { useState } from "react";
 import OrderModal from "../components/OrderModal";
 
-export default function Cart (){
+export default function cart (){
     const CartData= useStore((state)=>state.cart);
     const removeFood =useStore((state)=>state.removeFood);
     const [PaymentMethod, setPaymentMethod] = useState(null);
