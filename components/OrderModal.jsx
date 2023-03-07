@@ -11,7 +11,7 @@ export default function OrderModal({opened,setOpened,PaymentMethod}){
   const router =useRouter();
 const total= typeof window != 'undefined' && localStorage.getItem('total');
   const theme = useMantineTheme();
-const [FormData, setFormData] = useState({});
+const [FormData, setFormData] = useState(null);
 const handleInput=(e)=>
 {
     setFormData({...FormData,[e.target.name]:e.target.value})
