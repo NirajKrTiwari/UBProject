@@ -11,7 +11,7 @@ import {useRouter} from 'next/router';
 export default function OrderModal({opened,setOpened,PaymentMethod}){
 //   const router =useRouter();
 const total= typeof window != 'undefined' && localStorage.getItem('total');
-//   const theme = useMantineTheme();
+const theme = useMantineTheme();
 const [FormData, setFormData] = useState({});
 
 const handleInput=(e)=>
