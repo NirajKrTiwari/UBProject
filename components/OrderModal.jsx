@@ -23,7 +23,9 @@ const resetCart=useStore((state)=>state.resetCart)
 const handleSubmit=async (e)=>
 {
     e.preventDefault();
+    
     const id = await createOrder({...FormData,total,PaymentMethod});
+    console.log(id);
     toast.success("Order Placed Successfully");
     resetCart();
     {
@@ -40,7 +42,7 @@ const handleSubmit=async (e)=>
       onClose={()=>setOpened(null)}
     >
       {/* Modal content */}
-      <form action="" onClick={handleSubmit} className={css.formContainer}>
+      <form action=""  className={css.formContainer}>
         <input onChange={handleInput} type="text" name='name' placeholder='Name' required />
         <input onChange={handleInput} type="number" name='phone' placeholder='Phone Number' required/>
         {/* <textarea name="address"  rows={3}></textarea> */}
@@ -53,7 +55,7 @@ const handleSubmit=async (e)=>
             <option value="Boy's Hostel Block-3">Boys Hostel Block-3</option>
         </select>
         <span>You will Pay <span>Rs. {total}</span> on delivery</span>
-        <button  type='submit' className={css.btn}>Place Order</button>
+        <button  onClick={handleSubmit} type='submit' className={css.btn}>Place Order</button>
       </form>
       <Toaster/>
     </Modal>
