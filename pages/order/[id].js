@@ -17,6 +17,8 @@ export const getServerSideProps = async ({params}) => {
         }
     }
 }
+
+
 export default function Orders({order}){
     useEffect(() => {
         if(order.status>3)
@@ -24,6 +26,7 @@ export default function Orders({order}){
             localStorage.clear();
         }
     },[order])
+    
   return(
     <Layout>
         <div className={css.container}>

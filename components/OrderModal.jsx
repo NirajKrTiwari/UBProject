@@ -39,7 +39,7 @@ const handleSubmit=async (e)=>
       overlayOpacity={0.55}
       overlayBlur={3}
       opened={opened}
-      onClose={()=>setOpened(null)}
+      onClose={setOpened==null}
     >
       {/* Modal content */}
       <form action=""  className={css.formContainer}>

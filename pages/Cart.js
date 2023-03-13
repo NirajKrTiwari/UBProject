@@ -6,11 +6,16 @@ import { useStore } from "../store/store";
 import toast,{Toaster} from 'react-hot-toast';
 import { useState } from "react";
 import OrderModal from "../components/OrderModal";
+import { useRouter } from "next/router";
 
 export default function Cart (){
+    const router=useRouter();
     const CartData= useStore((state)=>state.cart);
     const removeFood =useStore((state)=>state.removeFood);
     const [PaymentMethod, setPaymentMethod] = useState(null);
+    const [Order,setOrder]=useState(
+        typeof window !== 'undefined' && localStorage.getItem('order')
+    )
     const handleRemove=(i)=>
     {
         removeFood(i);
@@ -22,8 +27,27 @@ export default function Cart (){
     {
         setPaymentMethod(0);
         typeof window !== 'undefined' && localStorage.setItem('total',total());
-        toast.success('Payment Method Selected');
     }
+
+    const handleCheckout=async()=>
+    {
+        typeof window !== 'undefined' && localStorage.setItem('total',total());
+        setPaymentMethod(1);
+        const response = await fetch('/api/stripe',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify(CartData.food),
+        });
+        if(response.status===500)    
+        return;
+        const data=await response.json();
+        toast.loading("Redirecting.....");
+        router.push(data.url);
+    }
+
+
     return(
         <Layout>
             <div className={css.container}>
@@ -84,10 +108,15 @@ export default function Cart (){
                         <span>Rs. {total()}</span>
                     </div>
                    </div>
+
+
+                   {!Order && CartData.food.length>0?(
                    <div className={css.button}>
                     <button className="btn" onClick={handleOnDelivery}>Pay on Delivery</button>
-                    <button className="btn">Pay Now</button>
+                    <button className="btn" onClick={handleCheckout}>Pay Now</button>
                    </div>
+                    ):null}
+
                 </div>
             </div>
             <Toaster/>
