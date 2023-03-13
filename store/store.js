@@ -22,11 +22,13 @@ export const useStore = create((set) => ({
         }
     })
     ),
+
+    //reset cart
     resetCart:()=>
-    set(()=>(
-        {
+    set(()=>({
+        cart:{
             food:[]
         }
-    ))
+    }))
 })
 )

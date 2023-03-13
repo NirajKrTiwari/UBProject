@@ -1,3 +1,4 @@
+// This is for Order Details
 import { Modal, useMantineTheme } from '@mantine/core';
 import css from '../styles/OrderModal.module.css';
 import { useState } from 'react';
@@ -8,14 +9,16 @@ import {useRouter} from 'next/router';
 
 
 export default function OrderModal({opened,setOpened,PaymentMethod}){
-  const router =useRouter();
+//   const router =useRouter();
 const total= typeof window != 'undefined' && localStorage.getItem('total');
-  const theme = useMantineTheme();
-const [FormData, setFormData] = useState(null);
+//   const theme = useMantineTheme();
+const [FormData, setFormData] = useState({});
+
 const handleInput=(e)=>
 {
     setFormData({...FormData,[e.target.name]:e.target.value})
 }
+
 const resetCart=useStore((state)=>state.resetCart)
 const handleSubmit=async (e)=>
 {
@@ -26,7 +29,7 @@ const handleSubmit=async (e)=>
     {
         typeof window != 'undefined' && localStorage.setItem('order',id);
     }
-    router.push(`/order/${id}`)
+    //router.push(`/order/${id}`)
 }
   return (
     <Modal
@@ -50,7 +53,7 @@ const handleSubmit=async (e)=>
             <option value="Boy's Hostel Block-3">Boys Hostel Block-3</option>
         </select>
         <span>You will Pay <span>Rs. {total}</span> on delivery</span>
-        <button onClick={handleSubmit} type='submit' className={css.btn}>Place Order</button>
+        <button  type='submit' className={css.btn}>Place Order</button>
       </form>
       <Toaster/>
     </Modal>
