@@ -9,7 +9,7 @@ import {useRouter} from 'next/router';
 
 
 export default function OrderModal({opened,setOpened,PaymentMethod}){
-//   const router =useRouter();
+const router =useRouter();
 const total= typeof window != 'undefined' && localStorage.getItem('total');
 const theme = useMantineTheme();
 const [FormData, setFormData] = useState({});
@@ -31,7 +31,7 @@ const handleSubmit=async (e)=>
     {
         typeof window != 'undefined' && localStorage.setItem('order',id);
     }
-    //router.push(`/order/${id}`)
+    router.push(`/order/${id}`)
 }
   return (
     <Modal
