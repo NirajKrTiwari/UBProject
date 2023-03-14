@@ -1,1 +1,1 @@
-project url: https://ub-project-puy8.vercel.app/
+project url: https://under-belly.vercel.app/
