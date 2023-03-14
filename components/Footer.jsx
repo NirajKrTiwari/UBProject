@@ -9,9 +9,9 @@ export default function Footer (){
     <div className={css.container}>
       <span>@ALL RIGHT RESERVED</span>
       <div className={css.social}>
-        <Link href="https://www.facebook.com/"><a target="_blank"><UilFacebook size={45} /></a></Link>
-        <Link href="https://github.com/NirajKrTiwari"><a target="_blank"><UilGithub size={45} /></a></Link>
-        <Link href="https://www.instagram.com/"><a target="_blank"><UilInstagram size={45} /></a></Link>
+        <Link href="https://www.facebook.com/"><a target="_blank"><UilFacebook size={35} /></a></Link>
+        <Link href="https://github.com/NirajKrTiwari"><a target="_blank"><UilGithub size={35} /></a></Link>
+        <Link href="https://www.instagram.com/"><a target="_blank"><UilInstagram size={35} /></a></Link>
       </div>
       <Link href="/">
         <div className={css.logo}>

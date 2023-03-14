@@ -1,38 +1,38 @@
-.container
-{
+.container {
     display: flex;
     flex-direction: column;
-    gap:3rem;
+    gap: 3rem;
     margin-top: 6rem;
 }
-.heading
-{
+
+.heading {
     display: flex;
     flex-direction: column;
     font-weight: bold;
     justify-content: flex-start;
 }
-.heading>:nth-child(1)
-{
+
+.heading>:nth-child(1) {
     font-size: 1.4rem;
     color: var(--themeRed);
     margin-bottom: 1rem;
 }
-.heading>:nth-child(2),.heading>:nth-child(3)
-{
+
+.heading>:nth-child(2),
+.heading>:nth-child(3) {
     font-size: 2rem;
     color: var(--themeBlack);
 }
-.ImageWrapper
-{
+
+.ImageWrapper {
     height: 16rem;
     width: 22rem;
     position: relative;
     overflow: hidden;
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
-.menu
-{
+
+.menu {
     display: flex;
     flex-wrap: wrap;
     row-gap: 2rem;
@@ -40,8 +40,8 @@
     justify-content: space-around;
     margin-top: 2rem;
 }
-.food
-{
+
+.food {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -50,25 +50,65 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
-.food>:nth-child(2),.food>:nth-child(3)
-{
+
+.food>:nth-child(2),
+.food>:nth-child(3) {
     padding-left: 2rem;
 }
-.ImageWrapper>span>img:hover{
+
+.ImageWrapper>span>img:hover {
     transform: scale(1.1);
 }
-.food:hover
-{
+
+.food:hover {
     cursor: pointer;
 }
-@media only screen and (max-width: 900px) and (min-width: 730px)  {
-    .ImageWrapper
-    {
+
+@media only screen and (max-width: 900px) and (min-width: 730px) {
+    .ImageWrapper {
         width: 19rem;
     }
-    .food>:nth-child(2),.food>:nth-child(3)
-    {
+
+    .food>:nth-child(2),
+    .food>:nth-child(3) {
         padding-left: 1rem;
         font-size: 1.4rem;
     }
+}
+
+@media only screen and (max-width: 729px) {
+    .ImageWrapper {
+        height: 9rem;
+        width: 10rem;
+    }
+
+    .food>:nth-child(2),
+    .food>:nth-child(3) {
+        padding-left: 0rem;
+        font-size: 12px;
+        padding-left: 5px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+        margin-top: 2rem;
+    }
+    .heading>:nth-child(1) {
+        font-size:12px;
+        margin-bottom: 1rem;
+    }
+    
+    .heading>:nth-child(2),
+    .heading>:nth-child(3) {
+        font-size: 16px;
+    }
+    .menu {
+            row-gap: 1rem;
+        }
+        .food{
+            max-width: 160px;
+            margin: 0;
+        }
 }

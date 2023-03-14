@@ -81,8 +81,8 @@
     }
 
     .ImageWrapper {
-        width: 5.2rem;
-        height: 5.2rem;
+        width: 6rem;
+        height: 6rem;
     }
     .feature>:nth-child(2) {
         font-weight: bold;

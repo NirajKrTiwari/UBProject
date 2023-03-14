@@ -52,6 +52,14 @@
     cursor: pointer;
     background-color: var(--themeRed);
 }
+.btn:active
+{
+  transform: scale(0.95);
+}
+.btn:hover
+{
+    background-color: rgb(196, 45, 12);
+}
 
 .right {
     position: relative;
@@ -88,6 +96,10 @@
     font-size: 1rem;
     z-index: 2;
 }
+.ContactUs:active
+{
+  transform: scale(0.95);
+}
 
 .ContactUs>div {
     background-color: rgb(71, 204, 71);
@@ -111,6 +123,10 @@
     left: 19rem;
     width: max-content;
     z-index: 2;
+}
+.Pizza:active
+{
+  transform: scale(0.95);
 }
 
 .Pizza>:nth-child(1) {

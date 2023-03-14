@@ -5,9 +5,9 @@
     justify-content: center; */
     gap: 3rem;
     align-items: center;
-    margin-top: 6rem;
+    margin-top: 4rem;
     background: linear-gradient(1deg,rgba(255,237,237,0.85) 0%, rgba(255,255,255,0) 14rem);
-
+    align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
     /* position: absolute;
@@ -28,6 +28,7 @@
     justify-items: center;
     gap: 0.5rem;
     cursor: pointer;
+    width: 100px;
 }
 .logo>span
 {
@@ -43,4 +44,23 @@
 .social>*{
     fill:var(--themeRed);
     cursor: pointer;
+}
+@media only screen and (max-width: 729px) {
+    .container
+{
+    margin-top: 1rem;
+    gap:.5rem;
+}
+.container>span
+{
+    font-size: 8px;
+}
+.social
+{
+    gap:0.5rem;
+}
+.logo
+{
+    width: 90px;
+}
 }
