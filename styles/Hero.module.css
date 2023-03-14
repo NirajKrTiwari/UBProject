@@ -54,6 +54,11 @@
 
 .right {
     position: relative;
+    display: block ;
+}
+.rightmobile
+{
+    display: none;
 }
 
 .imageContainer {
@@ -240,5 +245,13 @@
         flex-direction: column;
         font-weight: bold;
         justify-content: space-between;
+    }
+    .rightmobile {
+        position: relative;
+        display: block;
+    }
+    .right
+    {
+        display: none;
     }
 }

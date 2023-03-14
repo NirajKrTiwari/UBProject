@@ -6,6 +6,7 @@ import HeroImage from '../assets/HeroImage.png';
 import { UilPhone } from '@iconscout/react-unicons';
 import Pizzal from '../assets/p1.jpg';
 import Link from 'next/link';
+import BannerMobile from '../assets/banner-mobile.png'
 export default function Hero() {
   return (
     <div className={css.container}>
@@ -60,6 +61,36 @@ export default function Hero() {
           </div>
         </div></Link>
       </div>
+
+      <div className={css.rightmobile}>
+        <div className={css.imageContainer}>
+          <Image src={BannerMobile} alt="" layout="intrinsic" />
+        </div>
+        <Link href="tel:+91 7005762566">
+          <div className={css.ContactUs}>
+            <span>
+              Contact Us
+            </span>
+            <div className={css.phoneIcon}>
+              <UilPhone color='white' />
+            </div>
+          </div>
+        </Link>
+
+        <Link href="/food/pizza"><div className={css.Pizza}>
+          <div>
+            <Image src={Pizzal} alt="" objectFit='cover' layout='intrinsic' />
+          </div>
+          <div className={css.details}>
+            <span>
+              Pizza
+            </span>
+            <span><span style={{ color: 'var(--themeRed)' }}>Rs.</span> 250</span>
+          </div>
+        </div></Link>
+      </div>
+
+
     </div>
   )
 }

@@ -1,65 +1,105 @@
-.heading
-{
+.heading {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    padding-top:4rem ;
+    padding-top: 4rem;
 }
-.heading>:nth-child(1)
-{
-    color:var(--themeRed);
+
+.heading>:nth-child(1) {
+    color: var(--themeRed);
     font-size: 1rem;
 }
-.heading>:nth-child(2)
-{
+
+.heading>:nth-child(2) {
     font-size: 2rem;
 }
-.heading>:nth-child(3)
-{
+
+.heading>:nth-child(3) {
     font-size: 2rem;
 }
-.services
-{
+
+.services {
     display: flex;
     margin-top: 3rem;
-    gap:3rem;
+    gap: 3rem;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
 }
-.feature
-{
+
+.feature {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
 }
-.ImageWrapper
-{
+
+.ImageWrapper {
     width: 10rem;
     height: 10rem;
 }
-.feature>:nth-child(2)
-{
+
+.feature>:nth-child(2) {
     font-weight: bold;
 }
-.feature>:nth-child(3)
-{
-    color:var(--gray);
+
+.feature>:nth-child(3) {
+    color: var(--gray);
     word-wrap: break-word;
     width: 20rem;
     text-align: center;
 }
-@media only screen and (max-width: 900px) and (min-width: 730px)  {
 
-    .feature
-    {
-        width:12rem;
-    }
-    .feature>:nth-child(3)
-    {
+@media only screen and (max-width: 900px) and (min-width: 730px) {
+
+    .feature {
         width: 12rem;
     }
-  }
+
+    .feature>:nth-child(3) {
+        width: 12rem;
+    }
+}
+
+
+@media only screen and (max-width: 729px) {
+
+    .heading>:nth-child(1) {
+        color: var(--themeRed);
+        font-size: .7rem;
+    }
+
+    .heading>:nth-child(2) {
+        font-size: 1rem;
+    }
+
+    .heading>:nth-child(3) {
+        font-size: 1rem;
+    }
+
+    .ImageWrapper {
+        width: 5.2rem;
+        height: 5.2rem;
+    }
+    .feature>:nth-child(2) {
+        font-weight: bold;
+        font-size: 14px;
+    }
+    
+    .feature>:nth-child(3) {
+        color: var(--gray);
+        word-wrap: break-word;
+        width: 20rem;
+        text-align: center;
+        font-size: 12px;
+    }
+    .services {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+
+}
