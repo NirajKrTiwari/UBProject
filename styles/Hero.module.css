@@ -1,17 +1,16 @@
-.container
-{
+.container {
     display: flex;
     position: relative;
 
 }
-.left
-{
+
+.left {
     display: flex;
     gap: 2rem;
     flex-direction: column;
 }
-.cherryDiv
-{
+
+.cherryDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,27 +22,28 @@
     padding: 1rem;
     border-radius: 2rem;
     font-size: 0.8rem;
-    color:var(--themeRed);
+    color: var(--themeRed);
     font-weight: bold;
 }
-.heroText
-{
+
+.heroText {
     display: flex;
     flex-direction: column;
     font-size: 4rem;
     font-weight: bold;
 
 }
-.miniText
-{
+
+.miniText {
     width: 70%;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--gray);
 }
-.btn
-{
+
+.btn {
     padding: 1rem 2.5rem;
-    width:max-content;
+    width: max-content;
     border-radius: 4rem;
     border: none;
     color: white;
@@ -51,25 +51,26 @@
     cursor: pointer;
     background-color: var(--themeRed);
 }
-.right
-{
+
+.right {
     position: relative;
 }
-.imageContainer
-{
-    width: 38rem;
+
+.imageContainer {
+    width: 38rem !important;
     position: absolute;
-    top:-5em;
+    top: -5em;
     left: -5rem;
+    z-index: 1;
 }
-.ContactUs
-{
+
+.ContactUs {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
     background-color: white;
-    border-radius: 5rem;;
+    border-radius: 5rem;
     color: var(--themeRed);
     font-weight: 600;
     position: absolute;
@@ -77,9 +78,11 @@
     top: 6rem;
     gap: 1rem;
     box-shadow: var(--shadow);
+    font-size: 1rem;
+    z-index: 2;
 }
-.ContactUs>div
-{
+
+.ContactUs>div {
     background-color: rgb(71, 204, 71);
     border-radius: 50%;
     width: 2.5rem;
@@ -88,8 +91,8 @@
     justify-content: center;
     height: 2.5rem;
 }
-.Pizza
-{
+
+.Pizza {
     display: flex;
     gap: 1rem;
     background-color: white;
@@ -100,63 +103,142 @@
     bottom: 4rem;
     left: 19rem;
     width: max-content;
+    z-index: 2;
 }
-.Pizza>:nth-child(1)
-{
+
+.Pizza>:nth-child(1) {
     width: 6rem;
     height: 4rem;
     border-radius: .5rem;
     overflow: hidden;
 }
-.Pizza>:nth-child(2)
-{
+
+.Pizza>:nth-child(2) {
     display: flex;
     flex-direction: column;
     font-weight: bold;
     justify-content: space-between;
 }
-.Pizza:hover{
+
+.Pizza:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: all 0.2s ease-in-out;
 }
-.ContactUs:hover
-{
+
+.ContactUs:hover {
     cursor: pointer;
     transform: scale(1.1);
-    transition: all 0.2s ease-in-out;   
+    transition: all 0.2s ease-in-out;
 }
-@media only screen and (max-width: 900px) and (min-width: 730px)  {
-    .heroText
-    {
+
+@media only screen and (max-width: 900px) and (min-width: 730px) {
+    .heroText {
         font-size: 2rem;
     }
-    .miniText
-{
-    width: 100%;
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--gray);
-    text-align: justify;
-}
-.right
-{
 
-    width: 60%;
+    .miniText {
+        width: 100%;
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--gray);
+        text-align: justify;
+    }
+
+    .right {
+
+        width: 60%;
+    }
+
+    .left {
+        width: 40%;
+    }
+
+    .imageContainer {
+        width: 28rem !important;
+        position: absolute;
+        left: 0rem;
+        top: 0rem;
+    }
+
+    .Pizza {
+        left: 15rem;
+    }
 }
-.left
-{
-    width: 40%;
-}
-.imageContainer
-{
-    width: 28rem;
-    position: absolute;
-    left: 0rem;
-    top: 0rem;
-}
-.Pizza
-{
- left: 15rem; 
-}
+
+@media only screen and (max-width: 729px) {
+    .cherryDiv {
+        margin: 0;
+        padding: 0;
+        font-size: 0.6rem;
+    }
+
+    .heroText {
+        font-size: 1.1rem;
+        z-index: 2;
+    }
+
+    .miniText {
+        font-size: 0.5rem;
+    }
+
+    .btn {
+        padding: 8px 10px;
+    }
+
+    .left {
+        width: 50%;
+        gap: 1rem;
+    }
+
+    /* .ContactUs {
+        padding: 8px;
+        gap: 0.2rem;
+    }
+
+    .phoneIcon {
+        width: 2rem;
+        height: 2rem;
+    } */
+    .ContactUs {
+        top: 13rem;
+        display: none;
+    }
+
+
+    .imageContainer {
+        width: 18rem !important;
+        position: absolute;
+        top: -3em;
+        left: -6rem;
+        z-index: 1;
+    }
+
+    .Pizza {
+        display: flex;
+        gap: .5rem;
+        background-color: white;
+        box-shadow: var(--shadow);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        position: absolute;
+        bottom: -2rem;
+        left: -1rem;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        z-index: 2;
+    }
+    .Pizza>:nth-child(1) {
+        width: 5rem;
+        height: 3rem;
+    
+    }
+    
+    .Pizza>:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        justify-content: space-between;
+    }
 }

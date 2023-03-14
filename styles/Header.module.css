@@ -13,6 +13,7 @@
     gap: 0.5rem;
     flex:1;
     cursor: pointer;
+    padding-left: 0;
 }
 .logo>span{
     font-size: 1.5rem;
@@ -57,4 +58,21 @@
     justify-content: center;
     align-items: center;
     right: -0.5rem;
+}
+.icon
+{
+    display: none;
+}
+@media only screen and (max-width: 729px){
+.icon
+{
+    display: block;
+    width: 30px;
+}
+.menu{
+    display: none;
+}
+.logo{
+    padding-left: 0.5rem;
+}
 }
