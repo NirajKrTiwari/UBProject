@@ -97,6 +97,7 @@ export default function Cart (){
                         </tbody>
                     </table>
                 </div>
+                
                 <div className={css.cart}>
                    <span>Cart</span>
                    <div className={css.CartDetails}>

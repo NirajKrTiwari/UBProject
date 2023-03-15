@@ -80,3 +80,36 @@
         width: 60%;
     }
 }
+@media only screen and (max-width: 729px) {
+    .heading{
+        font-size: 1.5rem;
+    }
+    .container
+{
+    margin-top: 1rem;
+}
+.details
+{
+    width: 80%;
+    font-size: 14px;
+}
+.statusContainer
+    {
+        /* flex-direction: column; */
+    }
+    .status
+{
+    gap:1rem;
+    width: 10rem;
+}
+.statusContainer
+{
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+.spinner
+{
+    left: auto;
+}
+}

@@ -9,7 +9,7 @@ body {
   background: var(--background-color);
   overflow-x:hidden;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   scroll-behavior: smooth;
   
 }
