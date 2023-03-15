@@ -3,7 +3,7 @@
     display: flex;
     padding: 2rem;
     gap: 5rem;
-    /* margin-top: 2.5rem ; */
+    margin-top: 1rem ;
     flex-direction: row;
 }
 .imageWrapper
@@ -81,6 +81,7 @@
     flex-direction: column;
     gap:1rem;
     padding: 0 1.5rem;
+    height: 80vh;
 }
 .imageWrapper
 {
