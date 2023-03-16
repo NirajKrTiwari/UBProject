@@ -20,7 +20,9 @@ export default function SideBar(props){
     },
     bmCrossButton: {
       height: '24px',
-      width: '24px'
+      width: '24px',
+      top:'20px',
+      right:'20px',
     },
     bmCross: {
       top:'20px',
