@@ -1,0 +1,14 @@
+.sideNav
+{
+  list-style: none;
+    padding: 0;
+    color: black;
+    flex-direction: column;
+    display: flex;
+    gap: 1rem;
+    font-weight: bold;
+}
+.container
+{
+  left: 0;
+}

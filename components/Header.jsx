@@ -7,6 +7,7 @@ import { UilShoppingBag } from '@iconscout/react-unicons';
 import { useStore } from "../store/store";
 import { useEffect, useState } from 'react';
 import { UilReceipt } from '@iconscout/react-unicons';
+import SideBar from './SideBar';
 export default function Header() {
   const items = useStore((state) => state.cart.food.length);
   const CartData = useStore((state) => state.cart);
@@ -17,15 +18,11 @@ export default function Header() {
   }, [])
 
   return (
-    <div className={css.header}>
-      <div className={css.icon}>
-          {/* <svg viewBox="0 0 100 80" width="40" height="40">
-            <rect width="100" height="20"></rect>
-            <rect y="30" width="100" height="20"></rect>
-            <rect y="60" width="100" height="20"></rect>
-          </svg> */}
-          <Image src={MenuIcon} width={40} height={40}/>
-        </div>
+    <div className={css.header} id="App">
+       <div className={css.icon}>
+       {/* <Image src={MenuIcon} width={40} height={40}/> */}
+       <SideBar  />
+      </div>
       <Link href="/">
         <div className={css.logo}>
           <Image src={Logo} alt="" width={200} height={110} />

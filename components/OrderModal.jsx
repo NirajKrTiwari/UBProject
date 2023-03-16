@@ -6,13 +6,18 @@ import { createOrder } from '../lib/orderHandler';
 import toast,{Toaster} from 'react-hot-toast';
 import { useStore } from '../store/store';
 import {useRouter} from 'next/router';
-
+import { useDisclosure } from '@mantine/hooks';
 
 export default function OrderModal({opened,setOpened,PaymentMethod}){
 const router =useRouter();
 const total= typeof window != 'undefined' && localStorage.getItem('total');
 const theme = useMantineTheme();
 const [FormData, setFormData] = useState({});
+// const {close} = useDisclosure(false);
+function close()
+{
+  setOpened(false);
+}
 
 const handleInput=(e)=>
 {
@@ -39,7 +44,8 @@ const handleSubmit=async (e)=>
       overlayOpacity={0.55}
       overlayBlur={3}
       opened={opened}
-      onClose={setOpened==null}
+      // onClose={setOpened==null}
+      onClose={close}
     >
       {/* Modal content */}
       <form action=""  className={css.formContainer}>
