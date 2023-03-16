@@ -13,3 +13,7 @@
   left: 0;
   color: rgba(240, 150, 150, 0.85);
 }
+.bm-overlay, .myclass
+{
+  background-color: transparent !important;
+}
