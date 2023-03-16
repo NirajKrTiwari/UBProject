@@ -23,7 +23,9 @@ export default props => {
       width: '24px'
     },
     bmCross: {
-      background: '#bdc3c7'
+      top:'20px',
+      right:'20px',
+      background: 'black'
     },
     bmMenuWrap: {
       position: 'fixed',
