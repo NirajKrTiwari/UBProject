@@ -2,15 +2,17 @@ import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import css from "../styles/SideBar.module.css";
 import Link from 'next/link';
+import MenuIcon from '../assets/menuIcon.png';
 export default function SideBar(props){
 
   var styles = {
     bmBurgerButton: {
-      position: 'fixed',
-      width: '36px',
-      height: '30px',
-      left: '12px',
-      top: '36px'
+      width: '25px',
+      height: '25px',
+      position: 'relative',
+      display: 'flex',
+      cursor: 'pointer',
+      zindex: '99'
     },
     bmBurgerBars: {
       background: '#373a47'
@@ -58,7 +60,7 @@ export default function SideBar(props){
 
   return (
 
-    <Menu {...props} styles={styles}>
+    <Menu {...props} styles={styles} customBurgerIcon={ <img src="../assets/menuIcon.png" width={40} height={40} /> }>
     <div className={css.container}>
       <ul className={css.sideNav}>
         <Link href="/"><li>Home</li></Link>
