@@ -2,7 +2,7 @@ import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import css from "../styles/SideBar.module.css";
 import Link from 'next/link';
-export default props => {
+export default function SideBar(props){
 
   var styles = {
     bmBurgerButton: {
