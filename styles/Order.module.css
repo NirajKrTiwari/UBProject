@@ -1,3 +1,29 @@
+.cancelBtn
+{
+    padding: 0rem 1rem;
+    width: max-content;
+    border-radius: 1rem;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: var(--themeRed);
+}
+.cancelBtn:active
+{
+  transform: scale(0.95);
+}
+.cancelBtn:hover
+{
+    background-color: rgb(196, 45, 12);
+}
+.title
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+}
 .container
 {
     display: flex;

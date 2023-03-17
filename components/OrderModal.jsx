@@ -27,6 +27,7 @@ const handleInput=(e)=>
 const resetCart=useStore((state)=>state.resetCart)
 const handleSubmit=async (e)=>
 {
+  e.stopPropagation();
     e.preventDefault();
     
     const id = await createOrder({...FormData,total,PaymentMethod});
