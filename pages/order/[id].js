@@ -8,11 +8,12 @@ import Onway from '../../assets/onway.png';
 import { UilBox } from '@iconscout/react-unicons';
 import Spinner from '../../assets/spinner.svg';
 import { useEffect } from 'react';
+import {useRouter} from 'next/router';
 
 export const getServerSideProps = async ({ params }) => {
     const query = `*[_type=='order' && _id== '${params.id}']`;
     const order = await client.fetch(query);
-
+    
     return {
         props: {
             order: order[0]
@@ -21,21 +22,23 @@ export const getServerSideProps = async ({ params }) => {
 }
 
 export default function Orders({ order }) {
+    const router =useRouter();
     useEffect(() => {
         if (order.status > 3) {
             localStorage.clear();
-            window.location.href = '/';
+            router.push(`/`)
+            // window.location.href = '/';
         }
     }, [order])
 
     const deletePin= async (key) => {
-
         const query = `*[_type=='order' && _id== '${key}']`;
         const order = await client.fetch(query);
 
         const res = await client.delete(order[0]._id);
         localStorage.clear();
-        window.location.href = '/';
+        router.push(`/`)
+        //window.location.href = '/';
     }
     return (
         <Layout>

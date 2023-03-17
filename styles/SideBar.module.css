@@ -17,3 +17,12 @@
 {
   background-color: transparent !important;
 }
+.nav:active
+{
+    background-color: #d28f8f;
+    width: 100%;
+}
+.bmCrossButton:active
+{
+  background-color: #d28f8f;
+}

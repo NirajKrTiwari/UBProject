@@ -32,6 +32,9 @@
 .menu>li:hover{
     cursor: pointer;
     color:red;
+    border-bottom: 2px solid red;
+    transition: ease-in-out;
+    transition-delay: 0.10s;
 }
 .rightSide
 {
