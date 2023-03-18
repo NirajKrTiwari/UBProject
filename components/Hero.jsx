@@ -83,7 +83,7 @@ export default function Hero() {
           </div>
           <div className={css.details}>
             <span>
-              Paneer Pizza
+            Paneer Pizza
             </span>
             <span><span style={{ color: 'var(--themeRed)' }}>Rs.</span> 250</span>
           </div>

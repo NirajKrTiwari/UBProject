@@ -246,7 +246,7 @@
         border-radius: 0.5rem;
         position: absolute;
         bottom: 0rem;
-        left: -1rem;
+        left: -1.5rem;
         width: -webkit-max-content;
         width: -moz-max-content;
         width: max-content;
@@ -263,6 +263,7 @@
         flex-direction: column;
         font-weight: bold;
         justify-content: space-between;
+        font-size: 14px;
     }
     .rightmobile {
         position: relative;
