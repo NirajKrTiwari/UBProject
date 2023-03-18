@@ -38,7 +38,7 @@ export default function Food({ food }){
                 {/* Right Side */}
                 <div className={css.right}>
                     <span>{food.name}</span>
-                    <span>{food.description}</span>
+                    <span className={css.description}>{food.description}</span>
                     <span><span style={{ color: 'var(--themeRed)' }}>Rs. </span>{food.price}</span>
                     <div className={css.quantity}>
                         <span>Quantity</span>
