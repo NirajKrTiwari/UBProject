@@ -238,12 +238,10 @@
         height: 2rem;
     } */
     .ContactUs {
-        top: 13rem;
-        display: block;
-        top: -2rem;
-        display: block;
-        padding: 4px;
-        right: -10rem;
+        top: -1rem;
+    display: block;
+    padding: 4px;
+    right: -11rem;
     }
 
 
