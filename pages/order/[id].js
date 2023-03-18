@@ -22,12 +22,25 @@ export const getServerSideProps = async ({ params }) => {
 }
 
 export default function Orders({ order }) {
+    let time= typeof window != 'undefined' && localStorage.getItem('time');
+    console.log(typeof time)
+    if(order.address=="Academic Block")
+    {
+        time=Number(time)+5;
+    }
+    else if(order.address=="Girls Hostel")
+    {
+        time=Number(time)+10;
+    }
+    else
+    {
+        time=Number(time)+15;
+    }
     const router =useRouter();
     useEffect(() => {
         if (order.status > 3) {
             localStorage.clear();
             router.push(`/`)
-            // window.location.href = '/';
         }
     }, [order])
 
@@ -38,7 +51,7 @@ export default function Orders({ order }) {
         const res = await client.delete(order[0]._id);
         localStorage.clear();
         router.push(`/`)
-        //window.location.href = '/';
+
     }
     return (
         <Layout>
@@ -61,7 +74,9 @@ export default function Orders({ order }) {
                     <div><span>Phone</span><span>{order.phone}</span></div>
                     <div><span>Address</span><span>{order.address}</span></div>
                     <div><span>Method</span><span>{order.method === 0 ? 'Cash on Delivery' : 'Online Payment(Paid)'}</span></div>
+                    <div><span>Items</span><span className={css.foodname}>{order.foodname}</span></div>
                     <div><span>Total</span><span>Rs. {order.total}</span></div>
+                    <div><span>Delivery Time</span><span id="demo" onChange="" style={{ color: 'var(--themeRed)' }}>{time} min</span></div>
                 </div>
                 <div className={css.statusContainer}>
 

@@ -49,13 +49,13 @@ export default function Hero() {
           </div>
         </Link>
 
-        <Link href="/food/pizza"><div className={css.Pizza}>
+        <Link href="/food/paneer-pizza"><div className={css.Pizza}>
           <div>
             <Image src={Pizzal} alt="" objectFit='cover' layout='intrinsic' />
           </div>
           <div className={css.details}>
             <span>
-              Pizza
+              Paneer Pizza
             </span>
             <span><span style={{ color: 'var(--themeRed)' }}>Rs.</span> 250</span>
           </div>

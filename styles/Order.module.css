@@ -95,6 +95,12 @@
     padding:.5rem;
     font-size:.8rem;
 }
+.foodname
+{
+    width: 350px;
+    font-size: inherit;
+    text-align: right;
+}
 
 @media only screen and (max-width: 900px) and (min-width: 730px)  {
     .statusContainer
@@ -137,5 +143,12 @@
 .spinner
 {
     left: auto;
+}
+.foodname
+{
+    width: 200px;
+    display: block;
+    text-align: right;
+    font-size: 11px;
 }
 }

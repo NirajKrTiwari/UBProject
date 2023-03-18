@@ -28,13 +28,22 @@ export default
             type: 'string',
             option:
             {
-                maxLength: 40
+                maxLength: 100
             }
         },
         {
             name: 'method',
-            title: 'Method',
+            title: 'Payment Method(0:Cod,1:Paid)',
             type: 'number',
+        },
+        {
+            name: 'foodname',
+            title: 'Food(quantity)',
+            type: 'string',
+            option:
+            {
+                maxLength: 1000
+            }
         },
         {
             name: 'total',

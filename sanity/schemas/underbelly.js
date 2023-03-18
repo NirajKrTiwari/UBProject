@@ -36,6 +36,11 @@ export default
             name: 'description',
             title: 'description',
             type: 'text'
+        },
+        {
+            name: 'time',
+            title: 'preperation time',
+            type: 'number'
         }
     ]
 }

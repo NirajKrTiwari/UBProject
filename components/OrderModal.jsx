@@ -14,6 +14,7 @@ const total= typeof window != 'undefined' && localStorage.getItem('total');
 const theme = useMantineTheme();
 const [FormData, setFormData] = useState({});
 // const {close} = useDisclosure(false);
+const foodname= typeof window != 'undefined' && localStorage.getItem('foodname');
 function close()
 {
   setOpened(false);
@@ -29,9 +30,7 @@ const handleSubmit=async (e)=>
 {
   e.stopPropagation();
     e.preventDefault();
-    
-    const id = await createOrder({...FormData,total,PaymentMethod});
-    console.log(id);
+    const id=await createOrder({...FormData,foodname,total,PaymentMethod});
     toast.success("Order Placed Successfully");
     resetCart();
     {

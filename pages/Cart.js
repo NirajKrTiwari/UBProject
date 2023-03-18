@@ -22,16 +22,61 @@ export default function Cart (){
         toast.error('Item Removed');
     }
     const total=()=>CartData.food.reduce((a,b)=>a+b.quantity*b.price,0);
+    //preperation time
+    const time=()=>
+    {
+        let t=0;
+        const timearray=CartData.food.map((food)=>food.time);
+        let i=0;
+        for(i=0;i<timearray.length;i++)
+        {
+            t=t+timearray[i];
+        }
+        return t;
+    
+    }
+    console.log(time());
+
+
+    const timearray=CartData.food.map((food)=>food.time);
+    
+    const foodname=()=>
+    {
+        let val="";
+        const name=CartData.food.map((food)=>food.name);
+        const quan=CartData.food.map((food)=>food.quantity);
+        let i=0;
+        for(i=0;i<name.length;i++)
+        {   
+            if(i==0)
+            {
+                val=name[i]+"(qty: "+quan[i]+")";
+                continue;
+            }
+            val=val+" ,"+name[i]+"(qty: "+quan[i]+")";
+        }
+        
+        
+        return val;
+    }
+
+    
+
+    //name
 
     const handleOnDelivery=()=>
     {
         setPaymentMethod(0);
         typeof window !== 'undefined' && localStorage.setItem('total',total());
+        typeof window !== 'undefined' && localStorage.setItem('time',time());
+        typeof window !== 'undefined' && localStorage.setItem('foodname',foodname());
     }
 
     const handleCheckout=async()=>
     {
         typeof window !== 'undefined' && localStorage.setItem('total',total());
+        typeof window !== 'undefined' && localStorage.setItem('time',time());
+        typeof window !== 'undefined' && localStorage.setItem('foodname',foodname());
         setPaymentMethod(1);
         const response = await fetch('/api/stripe',{
             method:'POST',
@@ -128,6 +173,7 @@ export default function Cart (){
             opened={PaymentMethod === 0}
             setOpened={setPaymentMethod}
             PaymentMethod ={PaymentMethod}
+            foodname={foodname}
             />
         </Layout>
     )

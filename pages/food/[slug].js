@@ -21,6 +21,7 @@ export default function Food({ food }){
         toast.success("Added to Cart")
     }
 
+    console.log(food)
     return (
         <Layout>
             <div className={css.container}>
