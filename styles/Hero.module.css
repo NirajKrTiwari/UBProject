@@ -96,6 +96,20 @@
     font-size: 1rem;
     z-index: 2;
 }
+.btn:active
+{
+    transform: scale(0.95)
+}
+.btn:hover
+{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.btn
+{
+    box-shadow: var(--shadow);
+}
 .ContactUs:active
 {
   transform: scale(0.95);
@@ -225,7 +239,11 @@
     } */
     .ContactUs {
         top: 13rem;
-        display: none;
+        display: block;
+        top: -2rem;
+        display: block;
+        padding: 4px;
+        right: -10rem;
     }
 
 

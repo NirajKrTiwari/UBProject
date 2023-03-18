@@ -16,6 +16,11 @@
     cursor: pointer;
     padding-left: 0;
 }
+.logo:hover{
+    cursor: pointer;
+    transform: scale(1.06);
+    transition: all 0.2s ease-in-out;
+}
 .logo>span{
     font-size: 1.5rem;
     font-weight: 600;

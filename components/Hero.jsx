@@ -27,7 +27,7 @@ export default function Hero() {
           Our Mission is to filling your tummy with delicious food and with fast and free delivery
         </span>
         <Link href="#menu">
-          <button className={`btn ${css.btn}`}>
+          <button id="btn"className={`btn ${css.btn}`}>
             Get Started
           </button></Link>
       </div>
@@ -69,7 +69,6 @@ export default function Hero() {
         <Link href="tel:+91 7005762566">
           <div className={css.ContactUs}>
             <span>
-              Contact Us
             </span>
             <div className={css.phoneIcon}>
               <UilPhone color='white' />
