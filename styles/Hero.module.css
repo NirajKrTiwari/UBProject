@@ -101,6 +101,7 @@
     box-shadow: var(--shadow);
     font-size: 1rem;
     z-index: 2;
+    right: -6rem;
    
 }
 .btn:active

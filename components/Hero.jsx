@@ -42,9 +42,9 @@ export default function Hero() {
         </div>
         <Link href="tel:+91 7005762566">
           <div className={css.ContactUs}>
-            <span>
+            {/* <span>
               Contact Us
-            </span>
+            </span> */}
             <div className={css.phoneIcon}>
               <UilPhone color='white' />
             </div>

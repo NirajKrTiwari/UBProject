@@ -7,6 +7,10 @@
     font-size: 1rem;
     min-height: 77vh;
 }
+#payOn
+{
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
 .table
 {
     width: 100%;
