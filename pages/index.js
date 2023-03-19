@@ -5,7 +5,7 @@ import css from "../styles/Home.module.css";
 import Services from "../components/Services";
 import {client} from "../lib/client";
 import Menu from "../components/Menu";
-
+import About from "../components/About.jsx";
 
 export default function Home({ub}) {
   return (
@@ -21,6 +21,7 @@ export default function Home({ub}) {
           <Hero/>
           <Services/>
           <Menu ub={ub} />
+          <About/>
         </main>
       </div>
       </Layout>

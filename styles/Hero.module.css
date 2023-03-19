@@ -72,10 +72,15 @@
 }
 
 .imageContainer {
-    width: 38rem !important;
+    /* width: 38rem !important;
     position: absolute;
     top: -5em;
     left: -5rem;
+    z-index: 1; */
+    width: 38rem !important;
+    position: absolute;
+    top: -2em;
+    left: 2rem;
     z-index: 1;
 }
 
@@ -134,7 +139,7 @@
     border-radius: 0.5rem;
     position: absolute;
     bottom: 4rem;
-    left: 19rem;
+    left: 25rem;
     width: max-content;
     z-index: 2;
 }
@@ -170,6 +175,11 @@
 }
 
 @media only screen and (max-width: 900px) and (min-width: 730px) {
+    .ContactUs
+    {
+        top: 3rem;
+        left: -1rem;
+    }
     .heroText {
         font-size: 2rem;
     }
@@ -199,7 +209,7 @@
     }
 
     .Pizza {
-        left: 15rem;
+        left: 12rem;
     }
 }
 
@@ -238,18 +248,28 @@
         height: 2rem;
     } */
     .ContactUs {
-        top: -1rem;
+        /* top: -1rem;
     display: block;
     padding: 4px;
-    right: -11rem;
+    right: -11rem; */
+    top: 0rem;
+    display: block;
+    padding: 4px;
+    right: -10rem;
+
     }
 
 
     .imageContainer {
-        width: 18rem !important;
+        /* width: 18rem !important;
         position: absolute;
         top: -3em;
         left: -6rem;
+        z-index: 1; */
+        width: 12rem !important;
+        position: absolute;
+        top: 0em;
+        left: -1rem;
         z-index: 1;
     }
 

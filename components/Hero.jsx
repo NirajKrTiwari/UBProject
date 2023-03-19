@@ -2,7 +2,7 @@ import React from 'react';
 import css from '../styles/Hero.module.css';
 import Image from 'next/image';
 import Cherry from '../assets/Cherry.png';
-import HeroImage from '../assets/HeroImage.png';
+import HeroImage from '../assets/hero-img.png';
 import { UilPhone } from '@iconscout/react-unicons';
 import Pizzal from '../assets/p1.jpg';
 import Link from 'next/link';
@@ -64,7 +64,7 @@ export default function Hero() {
 
       <div className={css.rightmobile}>
         <div className={css.imageContainer}>
-          <Image src={BannerMobile} alt="" layout="intrinsic" />
+          <Image src={HeroImage} alt="" layout="intrinsic" />
         </div>
         <Link href="tel:+91 7005762566">
           <div className={css.ContactUs}>
