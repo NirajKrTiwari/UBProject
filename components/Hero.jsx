@@ -14,7 +14,9 @@ export default function Hero() {
       <div className={css.left}>
         <div className={css.cherryDiv}>
           <span>More than Faster</span>
+          <span className={css.cherryIcon}>
           <Image src={Cherry} alt="" width={40} height={25} />
+          </span>
         </div>
         <div className={css.heroText}>
           <span>Be The Fastest</span>
@@ -26,7 +28,7 @@ export default function Hero() {
         <span className={css.miniText}>
           Our Mission is to filling your tummy with delicious food and with fast and free delivery
         </span>
-        <Link href="#menu">
+        <Link href="/List">
           <button id="btn"className={`btn ${css.btn}`}>
             Get Started
           </button></Link>
