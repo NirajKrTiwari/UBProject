@@ -20,7 +20,7 @@ export default function Home({ub}) {
         <main>
           <Hero/>
           <Services/>
-          <Menu ub={ub} />
+          {/* <Menu ub={ub} /> */}
           <About/>
         </main>
       </div>

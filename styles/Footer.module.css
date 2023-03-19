@@ -16,7 +16,6 @@
 .container>span
 {
     color: var(--themeRed) !important;
-    font-weight: bold;
 }
 .logo
 {

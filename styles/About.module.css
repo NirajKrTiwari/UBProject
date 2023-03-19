@@ -9,6 +9,7 @@
     background-color: #fff1f173;
     flex-direction: row-reverse;
     margin-top: 1rem;
+    border-radius: 2rem;
 }
 .img
 {

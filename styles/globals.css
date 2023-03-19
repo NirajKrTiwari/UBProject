@@ -6,15 +6,19 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: var(--themeBlack);
-  background: var(--background-color);
+  /* background: var(--background-color); */
   overflow-x:hidden;
   width: 100%;
   /* height: 100vh; */
   scroll-behavior: smooth;
+  background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
   
 }
 
 :root{
+
+
   --themeRed: #F54748;
   --themeBlack: #2E2E2E;
   --pink: #FDECEC;
@@ -65,5 +69,6 @@ a {
   color: white;
   font-size: 1.1rem;
   cursor: pointer;
-  background-color: var(--themeRed);
+  /* background-color: var(--themeRed); */
+  background-image: linear-gradient(to right, #ff5070 0%, #f9748f 19%, #e6656c 60%, #ef553d 100%);
 }

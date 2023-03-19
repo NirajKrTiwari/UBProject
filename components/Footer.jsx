@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function Footer (){
   return(
     <div className={css.container}>
-      <span>@ALL RIGHT RESERVED</span>
+      <span>Designed & Developed by Niraj</span>
       <div className={css.social}>
         <Link href="https://www.facebook.com/"><a target="_blank"><UilFacebook size={35} /></a></Link>
         <Link href="https://github.com/NirajKrTiwari"><a target="_blank"><UilGithub size={35} /></a></Link>
