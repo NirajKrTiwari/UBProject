@@ -77,7 +77,7 @@ export default function SideBar(props) {
         <ul className={css.sideNav}>
           <Link href="/"><li className={css.nav }>Home</li></Link>
           <Link href="/#menu"><li className={css.nav}>Menu</li></Link>
-          <Link href="/"><li className={css.nav}>About Us</li></Link>
+          <Link href="/#about"><li className={css.nav}>About Us</li></Link>
         </ul>
       </div>
     </Menu>

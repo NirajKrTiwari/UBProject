@@ -52,6 +52,11 @@
     display: flex;
     gap: 1rem;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.counter:focus
+{
+    outline: none;
 }
 .btn
 {

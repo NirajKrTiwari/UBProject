@@ -103,7 +103,9 @@
 }
 .btn:active
 {
-    transform: scale(0.95)
+    transform: scale(0.95);
+    background-color: #f30101;
+    
 }
 .btn:hover
 {
@@ -114,6 +116,7 @@
 .btn
 {
     box-shadow: var(--shadow);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .ContactUs:active
 {

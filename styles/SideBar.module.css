@@ -7,6 +7,7 @@
     display: flex;
     gap: 1rem;
     font-weight: bold;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .container
 {
@@ -25,4 +26,5 @@
 .bmCrossButton:active
 {
   background-color: #d28f8f;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }

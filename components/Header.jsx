@@ -31,7 +31,7 @@ export default function Header() {
       <ul className={css.menu}>
         <Link href="/"><li>Home</li></Link>
         <Link href="/#menu"><li>Menu</li></Link>
-        <Link href="/"><li>About Us</li></Link>
+        <Link href="/#about"><li>About Us</li></Link>
 
       </ul>
 
