@@ -1,1 +1,1 @@
-project url: https://under-belly.vercel.app/
+project url: https://underbelly.vercel.app/
