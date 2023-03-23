@@ -206,22 +206,32 @@ cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
-@media only screen and (max-width: 900px) and (min-width: 730px) {
+@media only screen and (max-width: 1300px) and (min-width: 730px) {
+    .container {
+        display: flex;
+    /* padding: 0 4rem; */
+    justify-content: center;
+    gap:2rem
+    }
     .ContactUs
     {
         top: 3rem;
-        left: -1rem;
+        left: 0rem;
     }
     .heroText {
         font-size: 2rem;
     }
-
+.cherryDiv {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
     .miniText {
         width: 100%;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: var(--gray);
         text-align: justify;
+        padding-right: 2rem;
     }
 
     .right {
@@ -234,15 +244,17 @@ cursor: pointer;
     }
 
     .imageContainer {
-        width: 28rem !important;
+        width: 26rem !important;
         position: absolute;
         left: 0rem;
         top: 0rem;
     }
 
     .Pizza {
-        left: 12rem;
-    }
+        
+    left: 9rem;
+    bottom: 5rem;
+}
 }
 
 @media only screen and (max-width: 729px) {
