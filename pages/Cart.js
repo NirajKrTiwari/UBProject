@@ -27,10 +27,11 @@ export default function Cart (){
     {
         let t=0;
         const timearray=CartData.food.map((food)=>food.time);
+        const qunt=CartData.food.map((food)=>food.quantity);
         let i=0;
         for(i=0;i<timearray.length;i++)
         {
-            t=t+timearray[i];
+            t=t+timearray[i]*qunt[i];
         }
         return t;
     

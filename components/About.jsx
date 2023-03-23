@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import css from '../styles/About.module.css';
 import AboutImage from '../assets/about.jpg';
+import { useRouter } from "next/router";
+
 export default function About() {
+    const router = useRouter();
     return (
             
             <div className={css.container} id="about">

@@ -31,9 +31,7 @@ export default function Header() {
       <ul className={css.menu}>
         <Link href="/"><li>Home</li></Link>
         <Link href="/List"><li>Menu</li></Link>
-        <Link href="/#about"><li>About Us</li></Link>
-        {/* <Link href="/info"><li>Info</li></Link> */}
-
+        <Link href="/#about"><li>About</li></Link>
       </ul>
 
       <div className={css.rightSide}>
