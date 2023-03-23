@@ -14,7 +14,7 @@ background-image: linear-gradient(19deg, #e9cac9 0%, #DDD6F3 100%);
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     z-index: 10000;
     
@@ -53,7 +53,7 @@ background-image: linear-gradient(19deg, #e9cac9 0%, #DDD6F3 100%);
 {
     margin-top: 1rem;
     gap:.5rem;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     z-index: 10000;
 }
