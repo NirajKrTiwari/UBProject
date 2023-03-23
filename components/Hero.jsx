@@ -14,9 +14,9 @@ export default function Hero() {
       <div className={css.left}>
         <div className={css.cherryDiv}>
           <span>More than Faster</span>
-          <span className={css.cherryIcon}>
+          {/* <span className={css.cherryIcon}>
           <Image src={Cherry} alt="" width={40} height={25} />
-          </span>
+          </span> */}
         </div>
         <div className={css.heroText}>
           <span>Be The Fastest</span>

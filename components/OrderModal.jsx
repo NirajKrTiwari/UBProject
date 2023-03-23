@@ -15,21 +15,28 @@ const theme = useMantineTheme();
 const [FormData, setFormData] = useState({});
 // const {close} = useDisclosure(false);
 const foodname= typeof window != 'undefined' && localStorage.getItem('foodname');
+let check=0;
 function close()
 {
   setOpened(false);
 }
 
-const handleInput=(e)=>
-{
-    setFormData({...FormData,[e.target.name]:e.target.value})
-}
+// const handleInput=(e)=>
+// {
+
+//     setFormData({...FormData,[e.target.name]:e.target.value})
+// }
 
 const resetCart=useStore((state)=>state.resetCart)
+const [disabled, setDisabled] = useState(false);
 const handleSubmit=async (e)=>
 {
-  e.stopPropagation();
+  
+  // if(check==1){
+    console.log("valid"+check);
+    e.stopPropagation();
     e.preventDefault();
+    setDisabled(true);
     const id=await createOrder({...FormData,foodname,total,PaymentMethod});
     toast.success("Order Placed Successfully");
     resetCart();
@@ -37,7 +44,32 @@ const handleSubmit=async (e)=>
         typeof window != 'undefined' && localStorage.setItem('order',id);
     }
     router.push(`/order/${id}`)
+  // }
+  // else{
+  //   toast.error("Invalid Mobile Number");
+  // }
 }
+
+//mobile number validation
+
+const handleInput=(e)=>
+{
+  // if(e.target.name=='phone')
+  // {
+  //   if(e.target.value.length==10)
+  //   {
+  //     check=1;
+  //     console.log("valid"+check);
+  //   }
+  //   else{
+  //     check=0;
+  //     console.log(" not valid");
+  //     return;
+  //   }
+  // }
+  setFormData({...FormData,[e.target.name]:e.target.value})
+}
+
   return (
     <Modal
       overlayColor={theme.colorScheme === 'dark' ? theme.colors.dark[9] : theme.colors.gray[2]}
