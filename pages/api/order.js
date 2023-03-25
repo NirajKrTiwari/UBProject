@@ -14,6 +14,7 @@ export default async function handler(req, res)
                     foodname: newOrder.foodname,
                     total: newOrder.total,
                     method: newOrder.method,
+                    cancel:"false",
                     status: 1
                 }).then((data)=>
                 {

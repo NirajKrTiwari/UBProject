@@ -54,6 +54,18 @@ export default
             name: 'status',
             title: 'Status (Type: 1. COD,2. Cooking,3. Onway,4. Delivered)',
             type: 'number',
+        },
+        {
+            title: 'Order Cancel',
+            name: 'cancel',
+            type: 'string',
+            options: {
+              list: [
+                {title: 'Not Cancel', value: 'false'},
+                {title: 'Cancel', value: 'true'}
+              ],
+              layout: 'radio'
+            }
         }
     ]
 }

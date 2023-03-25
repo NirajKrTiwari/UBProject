@@ -7,8 +7,10 @@ import Cooking from '../../assets/cooking.png';
 import Onway from '../../assets/onway.png';
 import { UilBox } from '@iconscout/react-unicons';
 import Spinner from '../../assets/spinner.svg';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {useRouter} from 'next/router';
+import CancelPopUp from '../../components/CancelPopUp.jsx';
+
 
 export const getServerSideProps = async ({ params }) => {
     const query = `*[_type=='order' && _id== '${params.id}']`;
@@ -23,7 +25,18 @@ export const getServerSideProps = async ({ params }) => {
 
 export default function Orders({ order }) {
     let time= typeof window != 'undefined' && localStorage.getItem('time');
-    console.log(typeof time)
+    
+    const cancel1= typeof window != 'undefined' && localStorage.getItem('cancel');
+   
+    // if(order.cancel==="true")
+    // {   
+    //     <CancelPopUp/>
+    //     if(cancel1=="true")
+    //     {
+    //         // localStorage.clear();
+    //     }
+    // }
+
     if(order.address=="Academic Block")
     {
         time=Number(time)+5;
@@ -55,6 +68,9 @@ export default function Orders({ order }) {
     }
     return (
         <Layout>
+            {
+                order.cancel==="true" && <CancelPopUp/>
+            }
             <div className={css.container}>
                 <div className={css.title}>
                     <span className={css.heading}>
