@@ -9,7 +9,7 @@ import { UilBox } from '@iconscout/react-unicons';
 import Spinner from '../../assets/spinner.svg';
 import { useEffect, useState } from 'react';
 import {useRouter} from 'next/router';
-import CancelPopUp from '../../components/CancelPopUp';
+import CancelPopUp from "../../components/CancelPopUp.jsx";
 
 
 export const getServerSideProps = async ({ params }) => {
