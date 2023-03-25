@@ -25,18 +25,6 @@ export const getServerSideProps = async ({ params }) => {
 
 export default function Orders({ order }) {
     let time= typeof window != 'undefined' && localStorage.getItem('time');
-    
-    const cancel1= typeof window != 'undefined' && localStorage.getItem('cancel');
-   
-    // if(order.cancel==="true")
-    // {   
-    //     <CancelPopUp/>
-    //     if(cancel1=="true")
-    //     {
-    //         // localStorage.clear();
-    //     }
-    // }
-
     if(order.address=="Academic Block")
     {
         time=Number(time)+5;
