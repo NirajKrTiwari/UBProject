@@ -7,8 +7,6 @@ import {useRouter} from 'next/router';
 
 export default function CancelPopUp(){
     const router =useRouter();
-    const cancel="false";
-    console.log(cancel);
     const trigger=()=>
     {
       localStorage.clear();
