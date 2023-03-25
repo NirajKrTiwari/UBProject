@@ -37,7 +37,8 @@ export default function SideBar(props) {
       background: '#80D0C7',
       padding: '2.5em 1.5em 0',
       fontSize: '1.15em',
-      backgroundimage: 'linear-gradient(160deg, #0093E9 49%, #80D0C7 100%)'
+      background:'white'
+      // backgroundimage: 'linear-gradient(160deg, #0093E9 49%, #80D0C7 100%)'
       
     },
     bmMorphShape: {

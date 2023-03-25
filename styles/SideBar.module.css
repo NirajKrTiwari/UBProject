@@ -20,11 +20,11 @@
 }
 .nav:active
 {
-    background-color: #d28f8f;
+    background-color: #e3dddd;
     width: 100%;
 }
 .bmCrossButton:active
 {
-  background-color: #d28f8f;
+  background-color: #e8e3e3;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
