@@ -54,6 +54,13 @@ export default function Orders({ order }) {
         router.push(`/`)
 
     }
+    //count total order at current date from sanity using _createdAt field of sanity
+    const countOrder = async () => {
+        const query = `*[_type=='order' && _createdAt >= '${new Date().toISOString().split('T')[0]}']`;
+        const order = await client.fetch(query);
+        return order.length;
+    }
+    console.log(countOrder());
     return (
         <Layout>
             {

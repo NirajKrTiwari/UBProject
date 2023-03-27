@@ -64,9 +64,11 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 900px) and (min-width: 730px) {
+@media only screen and (max-width: 1024px) and (min-width: 601px) {
     .ImageWrapper {
-        width: 19rem;
+        /* width: 19rem; */
+        height: 34vw;
+        width: 44vw;
     }
 
     .food>:nth-child(2),
@@ -76,16 +78,19 @@
     }
 }
 
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 600px) {
     .ImageWrapper {
-        height: 9rem;
-        width: 10rem;
+        /* height: 9rem;
+        width: 10rem; */
+        height: 37vw;
+        width: 40vw;
     }
 
     .food>:nth-child(2),
     .food>:nth-child(3) {
         padding-left: 0rem;
-        font-size: 12px;
+        /* font-size: 12px; */
+        font-size: 3vw;
         padding-left: 5px;
     }
 
@@ -108,7 +113,8 @@
             row-gap: 1rem;
         }
         .food{
-            max-width: 160px;
+            /* max-width: 160px; */
+            max-width: 40vw;;
             margin: 0;
         }
 }

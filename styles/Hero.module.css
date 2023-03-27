@@ -112,7 +112,7 @@ cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: white;
     border-radius: 5rem;
     color: var(--themeRed);
@@ -120,6 +120,7 @@ cursor: pointer;
     position: absolute;
     width: max-content;
     top: 6rem;
+    left: 1rem;
     gap: 1rem;
     box-shadow: var(--shadow);
     font-size: 1rem;
@@ -286,7 +287,7 @@ cursor: pointer;
 
 
     .heroText {
-        font-size: 1.1rem;
+        font-size: 1rem;
         z-index: 2;
     }
 
@@ -299,7 +300,7 @@ cursor: pointer;
     }
 
     .left {
-        width: 50%;
+        width: 40%;
         gap: 1rem;
     }
 
@@ -320,7 +321,7 @@ cursor: pointer;
     top: 0rem;
     display: block;
     padding: 4px;
-    right: -10rem;
+    /* right: -10rem; */
 
     }
 
@@ -334,7 +335,7 @@ cursor: pointer;
         width: 12rem !important;
         position: absolute;
         top: 0em;
-        left: -1rem;
+        left: 0rem;
         z-index: 1;
     }
 
@@ -346,7 +347,7 @@ cursor: pointer;
         padding: 4px;
         border-radius: 0.5rem;
         position: absolute;
-        bottom: 1rem;
+        /* bottom: 1rem; */
         left: 1rem;
         width: -webkit-max-content;
         width: -moz-max-content;

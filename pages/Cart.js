@@ -8,6 +8,7 @@ import { useState } from "react";
 import OrderModal from "../components/OrderModal";
 import { useRouter } from "next/router";
 import { UilTrash } from '@iconscout/react-unicons';
+import { client } from '../lib/client';
 export default function Cart (){
     const router=useRouter();
     const CartData= useStore((state)=>state.cart);
@@ -23,6 +24,7 @@ export default function Cart (){
     }
     const total=()=>CartData.food.reduce((a,b)=>a+b.quantity*b.price,0);
     //preperation time
+
     const time=()=>
     {
         let t=0;
@@ -36,7 +38,6 @@ export default function Cart (){
         return t;
     
     }
-    console.log(time());
 
 
     const timearray=CartData.food.map((food)=>food.time);
@@ -61,9 +62,6 @@ export default function Cart (){
         return val;
     }
 
-    
-
-    //name
 
     const handleOnDelivery=()=>
     {
@@ -92,8 +90,32 @@ export default function Cart (){
         toast.loading("Redirecting.....");
         router.push(data.url);
     }
+    
+    //count number of order placed in current date using sanity _createdAt field and store in variable
+    const count=()=>
+    {
+        const order=client.fetch(`*[_type=="order" && _createdAt >='${new Date().toISOString().split('T')[0]}']{_createdAt}`);
+        return order;
+    }
+    console.log(count());
+    //print promis result in console
+ 
+    const [counter, setcounter] = useState(false)
+    count().then((result)=>{
+        console.log(result.length);
+        if(result.length<2) 
+        {
+            setcounter(false);
+        }
+        else
+        {
+            setcounter(true);
+        }
+    });
+    console.log(counter);
 
-
+    
+        
     return(
         <Layout>
             <div className={css.container}>
@@ -160,7 +182,7 @@ export default function Cart (){
                    </div>
 
 
-                   {!Order && CartData.food.length>0?(
+                   {!Order && CartData.food.length>0 && counter==false?(
                    <div className={css.button}>
                     <button className="btn" id={css["payOn"]} onClick={handleOnDelivery}>Pay on Delivery</button>
                     <button className="btn" onClick={handleCheckout}>Pay Now</button>

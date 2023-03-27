@@ -59,19 +59,18 @@ export default function SideBar(props) {
       background: 'transparent'
     }
   }
-  const [isOpen, setOpen] = useState(false)
-
+  const [isOpen, setIsOpen] = useState(false);
   const handleIsOpen = () => {
-    setOpen(!isOpen)
+    setIsOpen(!isOpen);
+  }
+  const closeSideBar = () => {
+    setIsOpen(false); 
   }
 
-  const closeSideBar = () => {
-    setOpen(false)
-  }
+  
   return (
 
     <Menu isOpen={isOpen}
-    onClick={closeSideBar}
     onOpen={handleIsOpen}
     onClose={handleIsOpen}
      {...props} styles={styles} 
@@ -80,9 +79,9 @@ export default function SideBar(props) {
      >
       <div className={css.container}>
         <ul className={css.sideNav}>
-          <Link onClick={closeSideBar} href="/"><li className={css.nav }>Home</li></Link>
-          <Link onClick={closeSideBar} href="/List"><li className={css.nav}>Menu</li></Link>
-          <Link onClick={closeSideBar} href="/#about"><li className={css.nav}>About Us</li></Link>
+          <Link  href="/"><li  onClick={closeSideBar} className={css.nav }>Home</li></Link>
+          <Link  href="/List"><li  onClick={closeSideBar} className={css.nav}>Menu</li></Link>
+          <Link  href="/#about"><li  onClick={closeSideBar} className={css.nav}>About Us</li></Link>
         </ul>
       </div>
     </Menu>

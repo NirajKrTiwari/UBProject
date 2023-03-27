@@ -83,7 +83,8 @@ export default function Hero() {
           </div>
         </Link>
 
-        <Link href="/food/paneer-pizza"><div className={css.Pizza}>
+        <Link href="/food/paneer-pizza">
+          <div className={css.Pizza}>
           <div>
             <Image src={Pizzal} alt="" objectFit='cover' layout='intrinsic' />
           </div>
@@ -93,7 +94,8 @@ export default function Hero() {
             </span>
             <span><span style={{ color: 'var(--themeRed)' }}>Rs.</span> 250</span>
           </div>
-        </div></Link>
+        </div>
+        </Link>
       </div>
 
 
