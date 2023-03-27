@@ -77,7 +77,7 @@
 @media only screen and (max-width: 1280px) and (min-width: 730px)  {
     .container
     {
-        padding: 10rem 2rem;
+        /* padding: 10rem 2rem; */
     }
     .imageWrapper
     {
@@ -96,7 +96,7 @@
     flex-direction: column;
     gap:1rem;
     padding: 0 1.5rem;
-    min-height: 80vh;
+    /* min-height: 80vh; */
 }
 .imageWrapper
 {

@@ -103,7 +103,7 @@ export default function Cart (){
     const [counter, setcounter] = useState(false)
     count().then((result)=>{
         console.log(result.length);
-        if(result.length<2) 
+        if(result.length<10) 
         {
             setcounter(false);
         }

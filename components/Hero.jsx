@@ -27,7 +27,7 @@ export default function Hero() {
           <span>Be The Fastest</span>
           <span>In Delivering</span>
           <span>
-            Your <span style={{ color:'#e70001' }}>Under Belly</span>
+            ~Your <span style={{ color:'#e70001' }}>Under Belly</span>
           </span>
         </div>
         <span className={css.miniText}>
