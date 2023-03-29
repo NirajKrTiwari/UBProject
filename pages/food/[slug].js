@@ -7,6 +7,7 @@ import RightArrow from '../../assets/arrowRight.png';
 import { useState } from 'react';
 import { useStore } from '../../store/store';
 import toast,{Toaster} from 'react-hot-toast';
+import Marquee from '../../components/Marquee';
 export default function Food({ food }){
     const src = urlFor(food.image).url();
     const [quantity, setQuantity] = useState(1);
@@ -57,28 +58,6 @@ export default function Food({ food }){
         </Layout>
     )
 }
-
-// export async function getStaticPaths()
-// {
-//     const paths = await client.fetch(
-//     '*[_type == "underbelly" && defined(slug.current)][].slug.current'
-//     );
-//     return {
-//         paths: paths.map((slug)=>({params:{slug}})),
-//         fallback: 'blocking',
-//     };
-// }
-// export async function getStaticProps(context)
-// {
-//     const {slug = ""} = context.params;
-//     const underbelly=await client.fetch(
-//     `*[_type == "underbelly" && slug.current == ${slug}][0]`   
-//         );
-//     return {
-//         props: {underbelly,},
-//     };
-// }
-
 
 export async function getStaticPaths() {
     const paths = await client.fetch(

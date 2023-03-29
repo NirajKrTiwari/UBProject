@@ -6,6 +6,8 @@ import Services from "../components/Services";
 import {client} from "../lib/client";
 import Menu from "../components/Menu";
 import About from "../components/About.jsx";
+import Marquee from "../components/Marquee";
+
 
 export default function Home({ub}) {
   return (
@@ -19,8 +21,10 @@ export default function Home({ub}) {
         {/* body */}
         <main>
           <Hero/>
+          <Marquee ub={ub}/>
           <Services/>
           {/* <Menu ub={ub} /> */}
+          
           <About/>
         </main>
       </div>
