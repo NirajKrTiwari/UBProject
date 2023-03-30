@@ -18,7 +18,7 @@
 }
 
 .track {
-  animation: marquee 10s linear infinite;
+  animation: marquee 9s linear infinite;
   width: 550%;
 }
 
@@ -40,7 +40,7 @@
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 15s linear infinite;
+  animation: marquee 9s linear infinite;
   width: 180%;
 }
 
@@ -216,5 +216,12 @@
     margin: 0 50px 0px 50px;
     color: #324d67;
     font-size: 1.5rem;
+  }
+  .track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 5s linear infinite;
+    width: 500%;
   }
 }
