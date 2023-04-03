@@ -7,7 +7,7 @@ export default async function(req,res){
     if(req.method=='POST')
     {
         try{
-            const params={
+            const params={ 
             submit_type:'pay',
             mode:"payment",
             payment_method_types:['card'],
