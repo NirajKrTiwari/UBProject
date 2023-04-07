@@ -6,7 +6,7 @@ import { createOrder } from '../lib/orderHandler';
 import toast,{Toaster} from 'react-hot-toast';
 import { useStore } from '../store/store';
 import {useRouter} from 'next/router';
-import { useDisclosure } from '@mantine/hooks';
+// import { useDisclosure } from '@mantine/hooks';
 
 export default function OrderModal({opened,setOpened,PaymentMethod}){
 const router =useRouter();

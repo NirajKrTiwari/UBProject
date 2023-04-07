@@ -31,8 +31,8 @@
 }
 
 .ImageWrapper {
-    height: 16rem;
-    width: 22rem;
+    height: 12rem;
+    width: 16rem;
     position: relative;
     overflow: hidden;
     border-radius: 1rem;
@@ -54,14 +54,14 @@
     align-items: flex-start;
     justify-content: center;
     gap: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
-    margin: 0 2rem;
+    margin-right:1rem;
 }
 
 .food>:nth-child(2),
 .food>:nth-child(3) {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 .ImageWrapper>span>img:hover {
