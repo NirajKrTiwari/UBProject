@@ -33,37 +33,37 @@ export default function Category()
             <h2>Category</h2>
             <div className={css.wrapperInternal}>
                 <div className={css.category} onClick={()=>{setvalue("Pizza")}}>
-                    <div className={css.image} ><Image className={css.image} src={Pizza} height={175} width={175} /></div>
+                    <div className={css.image} ><Image alt="" className={css.image} src={Pizza} height={175} width={175} /></div>
                     <p className={css.categoryName}>
                     Pizza
                     </p>
                 </div>
                 <div className={css.category} onClick={()=>{setvalue("Roll")}}>
-                    <div className={css.image}><Image className={css.image} src={Roll} height={175} width={175} /></div>
+                    <div className={css.image}><Image alt="" className={css.image} src={Roll} height={175} width={175} /></div>
                     <p className={css.categoryName}>
                     Roll
                     </p>
                 </div>
                 <div className={css.category} onClick={()=>{setvalue("Burger")}}>
-                    <div className={css.image}><Image className={css.image} src={Burger} height={175} width={175} /></div>
+                    <div className={css.image}><Image alt="" className={css.image} src={Burger} height={175} width={175} /></div>
                     <p className={css.categoryName}>
                     Burger
                     </p>
                 </div>
                 <div className={css.category} onClick={()=>{setvalue("Pizza")}}>
-                    <div className={css.image}><Image className={css.image} src={Pizza} height={175} width={175} /></div>
+                    <div className={css.image}><Image alt="" className={css.image} src={Pizza} height={175} width={175} /></div>
                     <p className={css.categoryName}>
                     Pizza
                     </p>
                 </div>
                 <div className={css.category} onClick={()=>{setvalue("South Indian")}}>
-                    <div className={css.image}><Image className={css.image} src={SouthIndian} height={175} width={175} /></div>
+                    <div className={css.image}><Image alt="" className={css.image} src={SouthIndian} height={175} width={175} /></div>
                     <p className={css.categoryName}>
                     South Indian
                     </p>
                 </div>
                 <div className={css.category} onClick={()=>{setvalue("Chinese")}}>
-                    <div className={css.image}><Image className={css.image} src={Chinese} height={175} width={175} /></div>
+                    <div className={css.image}><Image alt="" className={css.image} src={Chinese} height={175} width={175} /></div>
                     <p className={css.categoryName}>
                     Chinese
                     </p>
