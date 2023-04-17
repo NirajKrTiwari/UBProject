@@ -33,22 +33,25 @@ const handleSubmit=async (e)=>
 {
   
   // if(check==1){
-    console.log("valid"+check);
+    // console.log("valid"+check);
     e.stopPropagation();
     e.preventDefault();
     setDisabled(true);
     const cancel="false";
     const id=await createOrder({...FormData,foodname,total,PaymentMethod,cancel});
+    console.log(id);
     toast.success("Order Placed Successfully");
     resetCart();
     {
         typeof window != 'undefined' && localStorage.setItem('order',id);
     }
     router.push(`/order/${id}`)
+
   // }
   // else{
   //   toast.error("Invalid Mobile Number");
   // }
+
 }
 
 //mobile number validation
@@ -68,6 +71,7 @@ const handleInput=(e)=>
   //     return;
   //   }
   // }
+
   setFormData({...FormData,[e.target.name]:e.target.value})
 }
 

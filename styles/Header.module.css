@@ -34,6 +34,10 @@
     gap:2rem;
     justify-content: center;
     z-index: 99;
+    
+}
+.menu>li{
+    border-bottom: 2px solid transparent;
 }
 .menu>li:hover{
     cursor: pointer;

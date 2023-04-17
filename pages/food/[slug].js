@@ -18,6 +18,7 @@ export default function Food({ food }){
     }
     //add to cart function
     const addFood=useStore((state)=>state.addFood)
+    
     const addToCart = () => {
         addFood({...food,price: food.price,quantity: quantity})
         toast.success("Added to Cart")

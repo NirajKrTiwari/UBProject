@@ -20,7 +20,7 @@ export default async function(req,res){
                     'image-',
                     "https://cdn.sanity.io/images/5stz9231/production/"
                 )
-                .replace('-jpg,','.jpg');
+                .replace('-jpg','.jpg');
                 return{
                     price_data:{
                         currency:'inr',
