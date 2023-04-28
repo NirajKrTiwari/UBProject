@@ -13,10 +13,14 @@
     box-shadow: 0 0 10px 0 #0000001a;
     transition-delay: 1s;
 }
+.content>h1
+{
+    letter-spacing: 4px;
+}
 .img
 {
     overflow: hidden;
-    border-radius: 1px 50px;
+    /* border-radius: 1px 50px; */
     /* display:contents ; */
  
 }

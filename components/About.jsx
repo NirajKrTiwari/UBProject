@@ -19,7 +19,7 @@ export default function About() {
             </p>
             </div>
             <div className={css.img}>
-                <Image className={css.image} src={AboutImage} alt='about' width={1500} height={1000} />
+                <Image className={css.image} src={AboutImage} alt='about' width={1500} height={1000} style={{borderRadius:"0px 50px"}} />
             </div>
             </div>
     )
