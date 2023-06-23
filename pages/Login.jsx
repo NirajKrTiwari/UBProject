@@ -1,5 +1,5 @@
-import Layout from "../components/Layout"
-import css from "../styles/Login.module.css"
+import Layout from "../components/Layout";
+import css from "../styles/Login.module.css";
 import { useState, useEffect } from "react";
 import Lottie from "react-lottie";
 import loginAnim from "../assets/Login.json";
@@ -10,9 +10,6 @@ export default function Login() {
     const [emailStyle, setEmailStyle] = useState("block");
     const [paswdFill, setPaswdFill] = useState("block");
     const [passwordStyle, setPasswrdStyle] = useState("block")
-
-
-    // email validation
 
     function isEmptyName(event) {
         if (event.target.value != "") {
@@ -31,8 +28,6 @@ export default function Login() {
             setPasswrdStyle("block");
         }
     }
-
-
 
     useEffect(() => {
         if (emailStyle == 'none') {
