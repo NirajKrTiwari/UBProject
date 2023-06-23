@@ -86,7 +86,7 @@ export default function Login() {
 
                     <button className={css.loginButton} type="submit">Login</button>
                     <div className={css.registerlink}>
-                        <p>Don't have an account? <Link href="/Register"><span className={css.refer}>Register</span></Link></p>
+                        <p>Don&apos;t have an account? <Link href="/Register"><span className={css.refer}>Register</span></Link></p>
                     </div>
                 </form>
             </div>
