@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); 
+
+@keyframes animateBg {
+    100% {
+        filter: hue-rotate(360deg)
+    }
+}
+
+.refer{
+    color: black;
+    cursor: pointer;
+}
+.refer:hover
+{
+    color:aqua;
+}
+.refer:active
+{
+    color:red
+}
+.labelDisplay
+{
+    display: block;
+}
+.labelNotDisplay
+{
+    display: none;
+}
+.loginbox {
+    position: relative;
+    width: fit-content;
+    height: 450px;
+    background: transparent;
+    /* border: 2px solid rgba(119, 92, 92, 0.5);
+    border-radius: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    padding: 0 7vh;
+
+}
+.headerTag
+{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    margin: 0 auto;
+    justify-content: center;
+}
+.icon{
+    margin: 0;
+}
+.title{
+    font-size: 2.5rem;
+   color:black;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+.inputbox {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+   color:black;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputbox input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+    color: white;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+   color:black;
+    padding: 0 35px 0 5px;
+}
+
+.inputbox .icon {
+    position: absolute;
+    right: 8px;
+   color:black;
+    font-size: 1.2rem;
+    line-height: 57px;
+}
+
+.rememberforgot {
+    margin: -15px 0 15px;
+    font-size: .9em;
+   color:black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rememberforgot label input {
+    margin-right: 3px ;
+}
+
+.rememberforgot a {
+   color:black;
+    text-decoration: none;}
+
+    .rememberforgot a:hover {
+       text-decoration: underline;
+    }
+
+   .loginButton {
+        width: 100%;
+        height: 40px;
+        background: #fff;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #000;
+        font-weight: 500;
+    }  
+    .loginButton:hover
+    {
+        background-color: rgb(251, 175, 34);
+        color: white;
+    }  
+
+    .registerlink {
+        font-size: .9rem;
+       color:black;
+        text-align: center;
+        margin: 25px 0 10px;
+    }
+
+    .registerlink p a {
+       color:black;
+        text-decoration: none;
+        font-weight: 600;    
+    }
+
+    .registerlink p a:hover {
+        text-decoration: underline;
+    }
+    .loginbox
+    {
+        padding-top: 2rem;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 360px) {
+        .loginbox {
+            width: 100%;
+            /* height: 100vh; */
+            border: none;
+            border-radius: 0;
+        }
+
+        .inputbox {
+            width: 290px;
+        }
+    }

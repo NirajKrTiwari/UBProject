@@ -32,6 +32,7 @@ export default function Header() {
         <Link href="/"><li>Home</li></Link>
         <Link href="/List"><li>Menu</li></Link>
         <Link href="/#about"><li>About</li></Link>
+        <Link href="/Login"><li>Login</li></Link>
       </ul>
 
       <div className={css.rightSide}>

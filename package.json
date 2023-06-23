@@ -15,6 +15,7 @@
     "@sanity/client": "^5.2.2",
     "@sanity/image-url": "^1.0.2",
     "@stripe/stripe-js": "^1.32.0",
+    "lottie-react-native": "^5.1.6",
     "next": "12.2.0",
     "react": "18.2.0",
     "react-burger-menu": "^3.0.9",

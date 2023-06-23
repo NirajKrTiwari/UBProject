@@ -17,6 +17,7 @@ export default function Menu({ub})
             <span>Make you Fall In Love</span>
         </div>
         {value===undefined?<h2 className={css.category}>Menu</h2>:<h2 className={css.category}>{value}</h2>}
+        
 {value!==undefined?
         
         <div className={css.menu}>
