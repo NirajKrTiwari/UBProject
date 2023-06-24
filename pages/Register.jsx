@@ -2,7 +2,7 @@ import Layout from "../components/Layout"
 import css from "../styles/Login.module.css"
 import { useState, useEffect } from "react";
 import Link from 'next/link';
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 import loginAnim from "../assets/Login.json";
 export default function Register() {
 
@@ -82,21 +82,21 @@ export default function Register() {
         
     }, [emailStyle, passwordStyle, phone,name]);
 
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: loginAnim,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
+    // const defaultOptions = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: loginAnim,
+    //     rendererSettings: {
+    //         preserveAspectRatio: "xMidYMid slice",
+    //     },
+    // };
     return (
         <Layout>
             <div className={css.loginbox}>
                 <form action="">
                 <div className={css.headerTag}>
                         <h2 className={css.title}>Register</h2>
-                        <Lottie className={css.icon} options={defaultOptions} height={100} width={100} />
+                        {/* <Lottie className={css.icon} options={defaultOptions} height={100} width={100} /> */}
                     </div>
 
                     <div className={css.inputbox}>

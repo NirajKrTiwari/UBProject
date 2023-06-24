@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import css from "../styles/Login.module.css";
 import { useState, useEffect } from "react";
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 import loginAnim from "../assets/Login.json";
 import Link from 'next/link';
 export default function Login() {
@@ -45,14 +45,14 @@ export default function Login() {
         }
     }, [emailStyle, passwordStyle]);
 
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: loginAnim,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
+    // const defaultOptions = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: loginAnim,
+    //     rendererSettings: {
+    //         preserveAspectRatio: "xMidYMid slice",
+    //     },
+    // };
 
     return (
         <Layout>
@@ -60,7 +60,7 @@ export default function Login() {
                 <form action="">
                     <div className={css.headerTag}>
                         <h2 className={css.title}>Login</h2>
-                        <Lottie className={css.icon} options={defaultOptions} height={100} width={100} />
+                        {/* <Lottie className={css.icon} options={defaultOptions} height={100} width={100} /> */}
                     </div>
 
 

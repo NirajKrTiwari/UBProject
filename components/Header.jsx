@@ -7,6 +7,8 @@ import { UilShoppingBag } from '@iconscout/react-unicons';
 import { useStore } from "../store/store";
 import { useEffect, useState } from 'react';
 import { UilReceipt } from '@iconscout/react-unicons';
+import {UilUser} from '@iconscout/react-unicons';
+
 import SideBar from './SideBar';
 export default function Header() {
   const items = useStore((state) => state.cart.food.length);
@@ -32,10 +34,17 @@ export default function Header() {
         <Link href="/"><li>Home</li></Link>
         <Link href="/List"><li>Menu</li></Link>
         <Link href="/#about"><li>About</li></Link>
-        <Link href="/Login"><li>Login</li></Link>
+        {/* <Link href="/Login"><li>Login</li></Link> */}
       </ul>
 
       <div className={css.rightSide}>
+
+      <Link href='/Login'>
+          <div className={css.cart}>
+            <UilUser size={35} color="#2E2E2E" />
+          </div>
+        </Link>
+
         <Link href='/Cart'>
           <div className={css.cart}>
             <UilShoppingBag size={35} color="#2E2E2E" />
