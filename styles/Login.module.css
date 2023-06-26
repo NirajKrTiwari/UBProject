@@ -163,7 +163,7 @@
         margin: 0 auto;
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 600px) {
         .loginbox {
             width: 100%;
             /* height: 100vh; */
@@ -173,5 +173,9 @@
 
         .inputbox {
             width: 290px;
+        }
+        .title{
+            margin-top: 5rem;
+            font-size: 2rem;
         }
     }

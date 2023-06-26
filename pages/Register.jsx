@@ -63,6 +63,7 @@ export default function Register() {
             setphoneData(event.target.
                 value)
         }
+
         if (event.target.value != "") {
             setphoneCheck(true);
         }
@@ -123,22 +124,33 @@ export default function Register() {
     // };
 
 
-    const handleSubmit = async (e) => {
-        if (name != "" && email != "" && phone != "" && password != "" && agreeCheck!=false) {
+    const handleSubmit = async (e) => {        
+        if (name != "" && email != "" && phone.length == 10 && password != "" && agreeCheck != false) {
             setFormData({ name, email, password, phone })
             console.log(FormData);
+            toast.success("Registered Successfully");
             e.stopPropagation();
             e.preventDefault();
             const res = await createRegistration(FormData);
             console.log(res);
-            toast.success("Registered Successfully");
             router.push('/Login');
         }
         else {
+            if(phone.length!=10)
+            {
+                e.preventDefault();
+                toast.error("Enter valid Phone number");
+            }
+            else{
+            e.preventDefault();
             toast.error("Fill up all the details");
+            }
         }
 
     }
+
+
+
     const [agreeCheck, setagreeCheck] = useState(false)
     function isAgree(e) {
         if (e.target.checked == true) {
@@ -151,10 +163,16 @@ export default function Register() {
         }
     }
 
-    // const handleSubmit=()=>
-    // {
-    //     setFormData({name, email, password, phone})
-    //     // console.log(FormData);
+    // const handleSubmit = () => {
+    //     if (phone.length == 10) {
+
+    //     }
+    //     // else{
+    //     //     toast.error("Enter valid Phone number");
+    //     //     document.getElementById("phone").focus();
+    //     // }
+    //     // setFormData({name, email, password, phone})
+    //     console.log(phone.length);
     // }
 
     return (
@@ -192,7 +210,7 @@ export default function Register() {
                     <div className={css.inputbox}>
                         <span className={css.icon}>
                         </span>
-                        <input type="text" onChange={isPhone} required />
+                        <input id="phone" type="text" onChange={isPhone} required />
                         <label className="phone" style={{}}>Phone Number</label>
                     </div>
 
