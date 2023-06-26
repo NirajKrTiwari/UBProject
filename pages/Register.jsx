@@ -6,21 +6,37 @@ import Link from 'next/link';
 import loginAnim from "../assets/Login.json";
 import Head from "next/head";
 import favicon from "./favicon.ico"
-export default function Register() {
+import { createRegistration } from "../lib/registration";
+import { useRouter } from 'next/router';
+import toast, { Toaster } from 'react-hot-toast';
 
+
+
+
+export default function Register() {
+    const router = useRouter();
+    const [FormData, setFormData] = useState({});
     const [emailFill, setemailFill] = useState("block");
     const [emailStyle, setEmailStyle] = useState("block");
     const [paswdFill, setPaswdFill] = useState("block");
     const [passwordStyle, setPasswrdStyle] = useState("block");
 
-    const [name, setname] = useState(false);
-    const [phone, setphone] = useState(false);
+    const [nameCheck, setnameCheck] = useState(false);
+    const [phoneCheck, setphoneCheck] = useState(false);
 
 
+    // Data Storing in State
+    const [name, setNameData] = useState("");
+    const [email, setEmailData] = useState("");
+    const [password, setPassData] = useState("");
+    const [phone, setphoneData] = useState("");
 
     // email validation
 
     function isEmptyName(event) {
+        if (event.target.value != "") {
+            setNameData(event.target.value)
+        }
         if (event.target.value != "") {
             setEmailStyle("none");
         }
@@ -31,27 +47,40 @@ export default function Register() {
 
     function isEmptyPassword(event) {
         if (event.target.value != "") {
+            setPassData(event.target.
+                value)
+        }
+        if (event.target.value != "") {
             setPasswrdStyle("none");
         }
         else {
             setPasswrdStyle("block");
         }
     }
+
     function isPhone(event) {
         if (event.target.value != "") {
-            console.log(phone)
-            setphone(true);
+            setphoneData(event.target.
+                value)
+        }
+        if (event.target.value != "") {
+            setphoneCheck(true);
         }
         else {
-            setphone(false);
+            setphoneCheck(false);
         }
     }
+
     function isUser(event) {
         if (event.target.value != "") {
-            setname(true);
+            setEmailData(event.target.
+                value)
+        }
+        if (event.target.value != "") {
+            setnameCheck(true);
         }
         else {
-            setname(false);
+            setnameCheck(false);
         }
     }
     useEffect(() => {
@@ -68,21 +97,21 @@ export default function Register() {
         else {
             setPaswdFill('block');
         }
-        if (phone == true) {
+        if (phoneCheck == true) {
             document.getElementsByClassName("phone")[0].style.display = 'none';
         }
         else {
             document.getElementsByClassName("phone")[0].style.display = 'block';
         }
 
-        if (name == true) {
+        if (nameCheck == true) {
             document.getElementsByClassName("email2")[0].style.display = 'none';
         }
         else {
             document.getElementsByClassName("email2")[0].style.display = 'block';
         }
 
-    }, [emailStyle, passwordStyle, phone, name]);
+    }, [emailStyle, passwordStyle, phoneCheck, nameCheck]);
 
     // const defaultOptions = {
     //     loop: true,
@@ -92,6 +121,42 @@ export default function Register() {
     //         preserveAspectRatio: "xMidYMid slice",
     //     },
     // };
+
+
+    const handleSubmit = async (e) => {
+        if (name != "" && email != "" && phone != "" && password != "" && agreeCheck!=false) {
+            setFormData({ name, email, password, phone })
+            console.log(FormData);
+            e.stopPropagation();
+            e.preventDefault();
+            const res = await createRegistration(FormData);
+            console.log(res);
+            toast.success("Registered Successfully");
+            router.push('/Login');
+        }
+        else {
+            toast.error("Fill up all the details");
+        }
+
+    }
+    const [agreeCheck, setagreeCheck] = useState(false)
+    function isAgree(e) {
+        if (e.target.checked == true) {
+            setagreeCheck(true);
+            setFormData({ name, email, password, phone });
+            console.log(FormData);
+        }
+        else {
+            setagreeCheck(false);
+        }
+    }
+
+    // const handleSubmit=()=>
+    // {
+    //     setFormData({name, email, password, phone})
+    //     // console.log(FormData);
+    // }
+
     return (
         <Layout>
             <Head>
@@ -135,13 +200,15 @@ export default function Register() {
                         <label><input type="checkbox" /> Remember me</label>
                         <a href="#">Forgot Password</a>
                     </div> */}
+                    <input type="checkbox" id="agree" name="agree" onChange={isAgree} required></input>&nbsp;Confirm you want to register<br></br>
+                    <button style={{ marginTop: '1rem' }} className={css.loginButton} onClick={handleSubmit} type="submit">Register</button>
 
-                    <button className={css.loginButton} type="submit">Register</button>
                     <div className={css.registerlink}>
                         <p>Already have an account? <Link href="/Login"><span className={css.refer}>Login</span></Link></p>
                     </div>
                 </form>
             </div>
+            <Toaster />
         </Layout>
     )
 } 

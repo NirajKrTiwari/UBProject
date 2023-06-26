@@ -1,4 +1,5 @@
 import underbelly from './underbelly'
 import order from './order'
-export const schemaTypes = [underbelly,order]
+import user from './user'
+export const schemaTypes = [underbelly,order,user]
 

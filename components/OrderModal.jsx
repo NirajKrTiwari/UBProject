@@ -29,6 +29,7 @@ function close()
 
 const resetCart=useStore((state)=>state.resetCart)
 const [disabled, setDisabled] = useState(false);
+
 const handleSubmit=async (e)=>
 {
   
@@ -40,7 +41,7 @@ const handleSubmit=async (e)=>
     const cancel="false";
     const id=await createOrder({...FormData,foodname,total,PaymentMethod,cancel});
     console.log(id);
-    toast.success("Order Placed Successfully");
+    c
     resetCart();
     {
         typeof window != 'undefined' && localStorage.setItem('order',id);
@@ -89,7 +90,7 @@ const handleInput=(e)=>
         <input onChange={handleInput} type="text" name='name' placeholder='Name' required />
         <input onChange={handleInput} type="number" name='phone' placeholder='Phone Number' required/>
         {/* <textarea name="address"  rows={3}></textarea> */}
-        <select onChange={handleInput} name="address" id="address" placeholder='Address' required>
+        <select onChcange={handleInput} name="address" id="address" placeholder='Address' required>
             <option value="" disabled selected hidden>Address...</option>
             <option value="Academic Block">Academic Block</option>
             <option value="Girl's Hostel">Girls Hostel</option>
