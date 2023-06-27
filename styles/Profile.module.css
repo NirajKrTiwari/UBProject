@@ -1,0 +1,44 @@
+.container
+{
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.content
+{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+.content>h4{
+    margin:5px 0;
+    color: orangered;
+    font-weight: bold;
+}
+.LogoutBtn
+{
+    padding: 0rem 1rem;
+    width: max-content;
+    border-radius: 1rem;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: var(--themeRed);
+    margin: 1.4rem;
+    margin-left: 3rem;
+}
+.LogoutBtn:active
+{
+  transform: scale(0.95);
+}
+.LogoutBtn:hover
+{
+    background-color: rgb(196, 45, 12);
+}
+.title
+{
+    display: inline-flex;
+}
