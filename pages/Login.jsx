@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import toast, { Toaster } from 'react-hot-toast';
 import Profile from "../components/Profile";
 
-export default function Login({ user }) {
+export default function Login({ user, order}) {
     const router = useRouter();
     const [emailFill, setemailFill] = useState("block");
     const [emailStyle, setEmailStyle] = useState("block");
@@ -20,6 +20,8 @@ export default function Login({ user }) {
     const [email, setEmail] = useState("");
     const [password, setpassword] = useState("");
 
+    console.log(user);
+    console.log(order);
     function isEmptyName(event) {
         setEmail(event.target.value);
         if (event.target.value != "") {
@@ -141,7 +143,7 @@ export default function Login({ user }) {
                 </div>
                 :
                 <div>
-                    <Profile user={user} />
+                    <Profile user={user} order={order}/>
                 </div>
             }
             <Toaster />
@@ -151,8 +153,13 @@ export default function Login({ user }) {
 
 export const getServerSideProps = async () => {
     const query = '*[_type == "user"]'
+    const query2= '*[_type == "order"]'
     const user = await client.fetch(query)
+    const order = await client.fetch(query2)
     return {
-        props: { user }
+        props: {
+            user,
+            order
+            },
     }
 }

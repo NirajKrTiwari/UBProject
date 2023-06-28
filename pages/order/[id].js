@@ -42,7 +42,10 @@ export default function Orders({ order }) {
     const router =useRouter();
     useEffect(() => {
         if (order.status > 3) {
-            localStorage.clear();
+            localStorage.removeItem('order');
+            localStorage.removeItem('time');
+            localStorage.removeItem('foodname');
+            localStorage.removeItem('total');
             router.push(`/`)
         }
     }, [order])
@@ -52,7 +55,10 @@ export default function Orders({ order }) {
         const order = await client.fetch(query);
 
         const res = await client.delete(order[0]._id);
-        localStorage.clear();
+        localStorage.removeItem('order');
+        localStorage.removeItem('time');
+        localStorage.removeItem('foodname');
+        localStorage.removeItem('total');
         router.push(`/`)
 
     }

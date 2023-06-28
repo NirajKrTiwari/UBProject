@@ -14,6 +14,15 @@ export default
             }
         },
         {
+            name: 'email',
+            title: 'Email',
+            type: 'string',
+            option:
+            {
+                maxLength: 50
+            }
+        },
+        {
             name: 'phone',
             title: 'Phone',
             type: 'string',

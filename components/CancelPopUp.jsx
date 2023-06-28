@@ -6,7 +6,10 @@ export default function CancelPopUp(){
     const router =useRouter();
     const trigger=()=>
     { 
-      localStorage.clear();
+      localStorage.removeItem('order');
+      localStorage.removeItem('time');
+      localStorage.removeItem('foodname');
+      localStorage.removeItem('total');
         router.push(`/`)
     }
     return (

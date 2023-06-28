@@ -42,3 +42,20 @@
 {
     display: inline-flex;
 }
+.TableList
+{
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.TableList th{
+    border: 1px solid black;
+    padding: 0.5rem;
+    text-align: center;
+}
+.TableList td{
+    border: 1px solid black;
+    padding: 0.5rem;
+    text-align: center;
+}
