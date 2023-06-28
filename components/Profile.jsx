@@ -85,6 +85,9 @@ export default function Profile(props) {
                                     </div>
                                 )
                             }
+                            else{
+                                    <div className={css.card}>Data Not Available</div>
+                            }
                         }
                         )
                     }
