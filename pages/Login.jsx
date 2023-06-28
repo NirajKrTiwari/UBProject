@@ -70,7 +70,7 @@ export default function Login({ user, order}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const emailData = email;
+        const emailData = email.toLowerCase();
         const passwordData = password;
         const userFound = user.find((user) => user.email == emailData && user.password == passwordData);
         //clear email local storage
