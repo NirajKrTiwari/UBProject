@@ -6,13 +6,14 @@ import css from "../styles/Profile.module.css";
 
 export default function Profile(props) {
     const router = useRouter();
+    const [flag, setflag] = useState(false);
     const handleLogout = (e) => {
         toast.success("Logout Successfull")
         localStorage.removeItem('email');
         router.push("/Login");
     }
     const xy = typeof window !== 'undefined' && localStorage.getItem('email');
-    console.log("Check"+props.order[0].cancel)
+    console.log("Check" + props.order[0].cancel)
     return (
         <div className={css.container}>
             <div className={css.title}>
@@ -30,9 +31,6 @@ export default function Profile(props) {
                             </div>
                         )
                     }
-                    else {
-                        <div>No Data Available</div>
-                    }
                 }
                 )
             }
@@ -43,12 +41,11 @@ export default function Profile(props) {
                     {
                         props.order.sort((a, b) => new Date(b._createdAt) - new Date(a._createdAt)).map((order) => {
                             if (order.email == xy.toLowerCase()) {
+                                setflag(true);
                                 return (
                                     <div className={css.card}>
                                         <p>Order Id: <b>{order._id}</b></p>
-                                        {/* if order.status=4 set statusBadge background color to green */}
-
-                                        <p className={css.statusBadge} style={order.status == 4 ? { background: '#3ac83a', color: 'white' } : order.cancel=='true'?{background: 'red', color: 'white'}:{}}>
+                                        <p className={css.statusBadge} style={order.status == 4 ? { background: '#3ac83a', color: 'white' } : order.cancel == 'true' ? { background: 'red', color: 'white' } : {}}>
                                             {
                                                 order.cancel == 'true' ?
                                                     <div>Rejected</div>
@@ -85,11 +82,11 @@ export default function Profile(props) {
                                     </div>
                                 )
                             }
-                            else{
-                                    <div className={css.card}>Data Not Available</div>
-                            }
                         }
                         )
+                    }
+                    {
+                        flag==false?<div className={css.card} style={{textAlign:'center'}}>Data is not available</div>:<div></div>
                     }
                 </div>
 
