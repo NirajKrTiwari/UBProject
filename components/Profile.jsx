@@ -86,7 +86,7 @@ export default function Profile(props) {
                         )
                     }
                     {
-                        flag==false?<div className={css.card} style={{textAlign:'center'}}>Data is not available</div>:<div></div>
+                        flag==false?<div className={css.card} style={{textAlign:'center'}}>No Order Placed</div>:<div></div>
                     }
                 </div>
 
