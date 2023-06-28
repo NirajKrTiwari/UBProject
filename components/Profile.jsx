@@ -39,7 +39,11 @@ export default function Profile(props) {
             }
             <div className={css.List}>
                 <h3>Order List</h3>
-                <table className={css.TableList}>
+
+
+
+
+                {/* <table className={css.TableList}>
                     <thead>
                         <tr>
                             <th>Order Id</th>
@@ -62,14 +66,14 @@ export default function Profile(props) {
                                             <td>
                                                 {new Date(order._createdAt).toLocaleDateString()}
                                             </td>
-                                            <td>{order.method==0?
+                                            <td>{order.method == 0 ?
                                                 <div>COD</div> :
-                                                <div>Online</div>   
+                                                <div>Online</div>
                                             }</td>
                                             <td>
                                                 {
                                                     order.status == 4 ?
-                                                        <div style={{color:'green',fontWeight:'bold'}}>Delivered</div>
+                                                        <div style={{ color: 'green', fontWeight: 'bold' }}>Delivered</div>
                                                         :
                                                         order.status == 3 ?
                                                             <div>Onway</div>
@@ -83,15 +87,60 @@ export default function Profile(props) {
                                         </tr>
                                     )
                                 }
-                                else { 
+                                else {
                                     <div>No Data Available</div>
                                 }
                             })
                         }
                     </tbody>
+                </table> */}
 
 
-                </table>
+
+
+                <div className={css.listCard}>
+                    {
+                        props.order.map((order) => {
+                            if (order.email == xy.toLowerCase()) {
+                                return (                       
+                                    <div className={css.card}>
+                                        {/* convet order.email to lowerCase */}
+                                        <h3>{order.foodname}</h3>
+                                        <p className={css.statusBadge}>
+                                            {
+                                                order.status == 4 ?
+                                                    <div style={{ color: '#1aa11a', fontWeight: 'bold' }}>Delivered</div>
+                                                    :
+                                                    order.status == 3 ?
+                                                        <div>Onway</div>
+                                                        :
+                                                        order.status == 2 ?
+                                                            <div>Cooking</div>
+                                                            :
+                                                            <div>Under Process</div>
+                                            }
+                                        </p>
+                                        <p>Order Id: {order._id}</p>
+                                        <p>{order.address}</p>
+                                        <p>
+                                            {order.method == 0 ?
+                                                <div>Payment Mode:  <b>COD</b></div> :
+                                                <div>Payment Mode:  <b>Online</b></div>
+                                            }
+                                        </p>
+                                        <hr/>
+                                        <span className={css.cardBottom}>
+                                            <p>{new Date(order._createdAt).toLocaleDateString()} at {new Date(order._createdAt).toLocaleTimeString()}</p>
+                                            <p style={{ fontWeight: 'bold' }}>Rs.{order.total}</p>
+                                        </span>
+
+                                    </div>
+                                )
+                            }
+                        }
+                        )
+                    }
+                </div>
 
             </div>
 

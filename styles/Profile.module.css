@@ -59,3 +59,45 @@
     padding: 0.5rem;
     text-align: center;
 }
+.card
+{
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(224, 224, 224);
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 0.7rem;
+}
+.statusBadge
+{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    border: 1px solid transparent;
+    border-radius: .5rem;
+    padding: 0.5rem;
+    color: rgb(85, 84, 84);
+    font-weight: bold;
+    background-color: rgb(195, 186, 186);
+}
+.cardBottom
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cardBottom>p{
+    margin-top: 0;
+}
+.listCard{
+    width: 100vh;
+}
+@media only screen and (max-width: 900px) {
+    .listCard{
+        width: 90vw;
+    }
+}

@@ -35,7 +35,7 @@ export default function Register() {
 
     function isEmptyName(event) {
         if (event.target.value != "") {
-            setNameData(event.target.value)
+            setNameData(event.target.value.toLowerCase())
         }
         if (event.target.value != "") {
             setEmailStyle("none");
