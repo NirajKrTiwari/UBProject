@@ -58,7 +58,7 @@ export default function Cart (){
                 val=name[i]+"(qty: "+quan[i]+")";
                 continue;
             }
-            val=val+" ,"+name[i]+"(qty: "+quan[i]+")";
+            val=val+", "+name[i]+"(qty: "+quan[i]+")";
         }
         
         

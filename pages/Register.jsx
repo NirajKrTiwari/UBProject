@@ -35,7 +35,7 @@ export default function Register() {
 
     function isEmptyName(event) {
         if (event.target.value != "") {
-            setNameData(event.target.value.toLowerCase())
+            setNameData(event.target.value)
         }
         if (event.target.value != "") {
             setEmailStyle("none");
@@ -74,8 +74,7 @@ export default function Register() {
 
     function isUser(event) {
         if (event.target.value != "") {
-            setEmailData(event.target.
-                value)
+            setEmailData(event.target.value.toLowerCase())
         }
         if (event.target.value != "") {
             setnameCheck(true);
@@ -123,16 +122,22 @@ export default function Register() {
     //     },
     // };
 
-
+    useEffect(
+        ()=>
+        {
+          // console.log(FormData)
+        },[FormData]
+      )
+      
     const handleSubmit = async (e) => {        
         if (name != "" && email != "" && phone.length == 10 && password != "" && agreeCheck != false) {
             setFormData({ name, email, password, phone })
-            console.log(FormData);
+            // console.log(FormData);
             toast.success("Registered Successfully");
             e.stopPropagation();
             e.preventDefault();
             const res = await createRegistration(FormData);
-            console.log(res);
+            // console.log(res);
             router.push('/Login');
         }
         else {
@@ -156,7 +161,7 @@ export default function Register() {
         if (e.target.checked == true) {
             setagreeCheck(true);
             setFormData({ name, email, password, phone });
-            console.log(FormData);
+            // console.log(FormData);
         }
         else {
             setagreeCheck(false);

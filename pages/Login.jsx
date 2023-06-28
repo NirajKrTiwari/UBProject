@@ -20,8 +20,8 @@ export default function Login({ user, order}) {
     const [email, setEmail] = useState("");
     const [password, setpassword] = useState("");
 
-    console.log(user);
-    console.log(order);
+    // console.log(user);
+    // console.log(order);
     function isEmptyName(event) {
         setEmail(event.target.value);
         if (event.target.value != "") {
@@ -76,7 +76,7 @@ export default function Login({ user, order}) {
         //clear email local storage
         localStorage.removeItem('email');
         if (userFound) {
-            console.log("User Found");
+            // console.log("User Found");
             e.preventDefault();
             typeof window !== 'undefined' && localStorage.setItem('email', emailData);
             toast.success("Successfully Logged In")
@@ -85,9 +85,9 @@ export default function Login({ user, order}) {
         else {
             e.preventDefault();
             toast.error("Incorrect Email or Password")
-            console.log("User Not Found");
+            // console.log("User Not Found");
         }
-        console.log(typeof window !== 'undefined' && localStorage.getItem('email'));
+        // console.log(typeof window !== 'undefined' && localStorage.getItem('email'));
     }
 
     // const [Order,setOrder]=useState(

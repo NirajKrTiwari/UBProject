@@ -1,7 +1,7 @@
 // This is for Order Details
 import { Modal, useMantineTheme } from '@mantine/core';
 import css from '../styles/OrderModal.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createOrder } from '../lib/orderHandler';
 import toast,{Toaster} from 'react-hot-toast';
 import { useStore } from '../store/store';
@@ -15,7 +15,10 @@ const theme = useMantineTheme();
 const [FormData, setFormData] = useState({});
 // const {close} = useDisclosure(false);
 const foodname= typeof window != 'undefined' && localStorage.getItem('foodname');
-let check=0;
+const [Name, setName] = useState("");
+const [Email, setEmail] = useState("");
+const [Phone, setPhone] = useState("");
+const [Address, setAddress] = useState("");
 function close()
 {
   setOpened(false);
@@ -54,26 +57,33 @@ const handleSubmit=async (e)=>
 
 }
 
-//mobile number validation
+useEffect(
+  ()=>
+  {
+    // console.log(FormData)
+  },[FormData]
+)
 
 const handleInput=(e)=>
 {
-  // if(e.target.name=='phone')
+  // if(e.target.name=='name')
   // {
-  //   if(e.target.value.length==10)
-  //   {
-  //     check=1;
-  //     console.log("valid"+check);
-  //   }
-  //   else{
-  //     check=0;
-  //     console.log(" not valid");
-  //     return;
-  //   }
+  //   setName(e.target.value);
   // }
-
+  // else if(e.target.name=='email')
+  // {
+  //   setEmail(e.target.value);
+  // }
+  // else if(e.target.name=='phone')
+  // {
+  //   setPhone(e.target.value);
+  // }
+  // else if(e.target.name=='address')
+  // {
+  //   setAddress(e.target.value);
+  // }
   setFormData({...FormData,[e.target.name]:e.target.value})
-  console.log(FormData)
+  // setFormData({[e.target.name]:e.target.value})
 }
 
   return (

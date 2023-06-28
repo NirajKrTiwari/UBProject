@@ -1,24 +1,24 @@
-.container
-{
+.container {
     align-items: center;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
-.content
-{
+
+.content {
     align-items: center;
     display: flex;
     flex-direction: column;
 
 }
-.content>h4{
-    margin:5px 0;
+
+.content>h4 {
+    margin: 5px 0;
     color: orangered;
     font-weight: bold;
 }
-.LogoutBtn
-{
+
+.LogoutBtn {
     padding: 0rem 1rem;
     width: max-content;
     border-radius: 1rem;
@@ -30,37 +30,39 @@
     margin: 1.4rem;
     margin-left: 3rem;
 }
-.LogoutBtn:active
-{
-  transform: scale(0.95);
+
+.LogoutBtn:active {
+    transform: scale(0.95);
 }
-.LogoutBtn:hover
-{
+
+.LogoutBtn:hover {
     background-color: rgb(196, 45, 12);
 }
-.title
-{
+
+.title {
     display: inline-flex;
 }
-.TableList
-{
+
+.TableList {
     width: 100%;
     margin: 0 auto;
     border-collapse: collapse;
     border: 1px solid black;
 }
-.TableList th{
+
+.TableList th {
     border: 1px solid black;
     padding: 0.5rem;
     text-align: center;
 }
-.TableList td{
+
+.TableList td {
     border: 1px solid black;
     padding: 0.5rem;
     text-align: center;
 }
-.card
-{
+
+.card {
     width: 100%;
     margin: 0 auto;
     border: 1px solid transparent;
@@ -72,8 +74,8 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 0.7rem;
 }
-.statusBadge
-{
+
+.statusBadge {
     position: absolute;
     top: .5rem;
     right: 1rem;
@@ -83,21 +85,32 @@
     color: rgb(85, 84, 84);
     font-weight: bold;
     background-color: rgb(195, 186, 186);
+    letter-spacing: 0.5px;
 }
-.cardBottom
-{
+
+.cardBottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.cardBottom>p{
+
+.cardBottom>p {
     margin-top: 0;
 }
-.listCard{
+
+.listCard {
     width: 100vh;
 }
+
 @media only screen and (max-width: 900px) {
-    .listCard{
+    .listCard {
         width: 90vw;
+    }
+
+    .card {
+        font-size: 0.5rem;
+    }
+    .statusBadge {
+        padding: 0.3rem;
     }
 }

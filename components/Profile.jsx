@@ -9,17 +9,16 @@ export default function Profile(props) {
     const handleLogout = (e) => {
         toast.success("Logout Successfull")
         localStorage.removeItem('email');
-        router.push("/");
+        router.push("/Login");
     }
     const xy = typeof window !== 'undefined' && localStorage.getItem('email');
+    console.log("Check"+props.order[0].cancel)
     return (
         <div className={css.container}>
             <div className={css.title}>
                 <h1>Profile</h1>
                 <button className={css.LogoutBtn} onClick={handleLogout}>Logout</button>
             </div>
-
-            {/* map all the value in the array props.user */}
             {
                 props.user.map((user) => {
                     if (user.email == xy) {
@@ -40,40 +39,22 @@ export default function Profile(props) {
             <div className={css.List}>
                 <h3>Order List</h3>
 
+                <div className={css.listCard}>
+                    {
+                        props.order.sort((a, b) => new Date(b._createdAt) - new Date(a._createdAt)).map((order) => {
+                            if (order.email == xy.toLowerCase()) {
+                                return (
+                                    <div className={css.card}>
+                                        <p>Order Id: <b>{order._id}</b></p>
+                                        {/* if order.status=4 set statusBadge background color to green */}
 
-
-
-                {/* <table className={css.TableList}>
-                    <thead>
-                        <tr>
-                            <th>Order Id</th>
-                            <th>Food</th>
-                            <th>Price</th>
-                            <th>Date</th>
-                            <th>Payment</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            props.order.map((order) => {
-                                if (order.email == xy) {
-                                    return (
-                                        <tr>
-                                            <td>{order._id}</td>
-                                            <td>{order.foodname}</td>
-                                            <td>{order.total}</td>
-                                            <td>
-                                                {new Date(order._createdAt).toLocaleDateString()}
-                                            </td>
-                                            <td>{order.method == 0 ?
-                                                <div>COD</div> :
-                                                <div>Online</div>
-                                            }</td>
-                                            <td>
-                                                {
+                                        <p className={css.statusBadge} style={order.status == 4 ? { background: '#3ac83a', color: 'white' } : order.cancel=='true'?{background: 'red', color: 'white'}:{}}>
+                                            {
+                                                order.cancel == 'true' ?
+                                                    <div>Rejected</div>
+                                                    :
                                                     order.status == 4 ?
-                                                        <div style={{ color: 'green', fontWeight: 'bold' }}>Delivered</div>
+                                                        <div>Delivered</div>
                                                         :
                                                         order.status == 3 ?
                                                             <div>Onway</div>
@@ -81,46 +62,13 @@ export default function Profile(props) {
                                                             order.status == 2 ?
                                                                 <div>Cooking</div>
                                                                 :
-                                                                <div>Under Process</div>
-                                                }
-                                            </td>
-                                        </tr>
-                                    )
-                                }
-                                else {
-                                    <div>No Data Available</div>
-                                }
-                            })
-                        }
-                    </tbody>
-                </table> */}
-
-
-
-
-                <div className={css.listCard}>
-                    {
-                        props.order.map((order) => {
-                            if (order.email == xy.toLowerCase()) {
-                                return (                       
-                                    <div className={css.card}>
-                                        {/* convet order.email to lowerCase */}
-                                        <h3>{order.foodname}</h3>
-                                        <p className={css.statusBadge}>
-                                            {
-                                                order.status == 4 ?
-                                                    <div style={{ color: '#1aa11a', fontWeight: 'bold' }}>Delivered</div>
-                                                    :
-                                                    order.status == 3 ?
-                                                        <div>Onway</div>
-                                                        :
-                                                        order.status == 2 ?
-                                                            <div>Cooking</div>
-                                                            :
-                                                            <div>Under Process</div>
+                                                                order.status == 1 ?
+                                                                    <div>Under Process</div>
+                                                                    :
+                                                                    <div></div>
                                             }
                                         </p>
-                                        <p>Order Id: {order._id}</p>
+                                        <h3>{order.foodname}</h3>
                                         <p>{order.address}</p>
                                         <p>
                                             {order.method == 0 ?
@@ -128,9 +76,9 @@ export default function Profile(props) {
                                                 <div>Payment Mode:  <b>Online</b></div>
                                             }
                                         </p>
-                                        <hr/>
+                                        <hr />
                                         <span className={css.cardBottom}>
-                                            <p>{new Date(order._createdAt).toLocaleDateString()} at {new Date(order._createdAt).toLocaleTimeString()}</p>
+                                            <p>{new Date(order._createdAt).toLocaleDateString('en-GB')} at {new Date(order._createdAt).toLocaleTimeString()}</p>
                                             <p style={{ fontWeight: 'bold' }}>Rs.{order.total}</p>
                                         </span>
 
