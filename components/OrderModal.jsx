@@ -49,7 +49,7 @@ const handleSubmit=async (e)=>
   //     position: toast.POSITION.TOP_CENTER
   // });
 
-  cogoToast.success('Order Placed Successfully');
+  // cogoToast.success('Order Placed Successfully');
   cogoToast.loading("Please wait");
 
     const cancel="false";
@@ -97,7 +97,10 @@ const handleInput=(e)=>
 }
 // const checkHandle=(e)=>
 // {
-//   toast.success("Hiii");
+//   //  e.stopPropagation();
+//   //   e.preventDefault();
+//   cogoToast.success('Order Placed Successfully');
+//   // cogoToast.loading("Please wait");
 // }
 
   return (
