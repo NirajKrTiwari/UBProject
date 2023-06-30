@@ -3,9 +3,15 @@ import { Modal, useMantineTheme } from '@mantine/core';
 import css from '../styles/OrderModal.module.css';
 import { useEffect, useState } from 'react';
 import { createOrder } from '../lib/orderHandler';
+
+
 // import toast,{Toaster} from 'react-hot-toast';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+import cogoToast from 'cogo-toast';
+
 import { useStore } from '../store/store';
 import {useRouter} from 'next/router';
 // import { useDisclosure } from '@mantine/hooks';
@@ -37,9 +43,13 @@ const handleSubmit=async (e)=>
 {
     e.stopPropagation();
     e.preventDefault();
+
     toast.success("Order Placed Successfully", {
       position: toast.POSITION.TOP_CENTER
   });
+
+  cogoToast.success('Order Placed Successfully');
+
     const cancel="false";
     const id=await createOrder({...FormData,foodname,total,PaymentMethod,cancel});
     resetCart();
@@ -116,7 +126,7 @@ const handleInput=(e)=>
         {/* <div onClick={checkHandle}>Click</div> */}
       </form>
       {/* <Toaster/> */}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </Modal>
   );
 }
