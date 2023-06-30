@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import css from "../styles/Login.module.css";
 import { useState, useEffect } from "react";
-// import Lottie from "react-lottie";
+import Lottie from "react-lottie";
 import loginAnim from "../assets/Login.json";
 import Link from 'next/link';
 import Head from "next/head";
@@ -59,14 +59,14 @@ export default function Login({ user, order}) {
         }
     }, [emailStyle, passwordStyle]);
 
-    // const defaultOptions = {
-    //     loop: true,
-    //     autoplay: true,
-    //     animationData: loginAnim,
-    //     rendererSettings: {
-    //         preserveAspectRatio: "xMidYMid slice",
-    //     },
-    // };
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: loginAnim,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
 
 
     const handleSubmit = (e) => {
@@ -112,7 +112,7 @@ export default function Login({ user, order}) {
                     <form action="">
                         <div className={css.headerTag}>
                             <h2 className={css.title}>Login</h2>
-                            {/* <Lottie className={css.icon} options={defaultOptions} height={100} width={100} /> */}
+                            <Lottie className={css.icon} options={defaultOptions} height={100} width={100} />
                         </div>
 
 
