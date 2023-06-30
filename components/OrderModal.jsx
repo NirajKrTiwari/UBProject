@@ -11,7 +11,7 @@ import { createOrder } from '../lib/orderHandler';
 // import 'react-toastify/dist/ReactToastify.css';
 
 
-import {cogoToast} from 'cogo-toast';
+import cogoToast from 'cogo-toast';
 
 import { useStore } from '../store/store';
 import {useRouter} from 'next/router';
