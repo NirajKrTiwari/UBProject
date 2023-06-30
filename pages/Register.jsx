@@ -2,14 +2,14 @@ import Layout from "../components/Layout"
 import css from "../styles/Login.module.css"
 import { useState, useEffect } from "react";
 import Link from 'next/link';
-// import Lottie from "react-lottie";
+import Lottie from "react-lottie";
 import loginAnim from "../assets/Login.json";
 import Head from "next/head";
 import favicon from "./favicon.ico"
 import { createRegistration } from "../lib/registration";
 import { useRouter } from 'next/router';
-import toast, { Toaster } from 'react-hot-toast';
-
+// import toast, { Toaster } from 'react-hot-toast';
+import cogoToast from 'cogo-toast';
 
 
 
@@ -113,14 +113,14 @@ export default function Register() {
 
     }, [emailStyle, passwordStyle, phoneCheck, nameCheck]);
 
-    // const defaultOptions = {
-    //     loop: true,
-    //     autoplay: true,
-    //     animationData: loginAnim,
-    //     rendererSettings: {
-    //         preserveAspectRatio: "xMidYMid slice",
-    //     },
-    // };
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: loginAnim,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
 
     useEffect(
         ()=>
@@ -133,7 +133,7 @@ export default function Register() {
         if (name != "" && email != "" && phone.length == 10 && password != "" && agreeCheck != false) {
             setFormData({ name, email, password, phone })
             // console.log(FormData);
-            toast.success("Registered Successfully");
+            cogoToast.success("Registered Successfully");
             e.stopPropagation();
             e.preventDefault();
             const res = await createRegistration(FormData);
@@ -141,15 +141,15 @@ export default function Register() {
             router.push('/Login');
         }
         else {
-            if(phone.length!=10)
-            {
-                e.preventDefault();
-                toast.error("Enter valid Phone number");
-            }
-            else{
+            // if(phone.length!=10)
+            // {
+            //     e.preventDefault();
+            //     cogoToast.error("Enter valid Phone number");
+            // }
+            // else{
             e.preventDefault();
-            toast.error("Fill up all the details");
-            }
+            cogoToast.error("Fill up all the details");
+            // }
         }
 
     }
@@ -191,7 +191,7 @@ export default function Register() {
                 <form action="">
                     <div className={css.headerTag}>
                         <h2 className={css.title}>Register</h2>
-                        {/* <Lottie className={css.icon} options={defaultOptions} height={100} width={100} /> */}
+                        <Lottie className={css.icon} options={defaultOptions} height={100} width={100} />
                     </div>
 
                     <div className={css.inputbox}>
@@ -231,7 +231,7 @@ export default function Register() {
                     </div>
                 </form>
             </div>
-            <Toaster />
+            {/* <Toaster /> */}
         </Layout>
     )
 } 
