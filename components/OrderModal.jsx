@@ -50,6 +50,7 @@ const handleSubmit=async (e)=>
   // });
 
   cogoToast.success('Order Placed Successfully');
+  cogoToast.loading("Please wait");
 
     const cancel="false";
     const id=await createOrder({...FormData,foodname,total,PaymentMethod,cancel});
