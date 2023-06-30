@@ -47,3 +47,11 @@
     color: #fff;
     cursor: pointer;
 }
+.toastMessage
+{
+    background: darkblue;
+    color: #fff;
+    font-size: 20px;
+    width: 34vw;
+    padding: 30px 20px;
+}

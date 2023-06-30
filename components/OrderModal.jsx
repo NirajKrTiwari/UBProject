@@ -7,11 +7,11 @@ import { createOrder } from '../lib/orderHandler';
 
 // import toast,{Toaster} from 'react-hot-toast';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 
-// import cogoToast from 'cogo-toast';
+import cogoToast from 'cogo-toast';
 
 import { useStore } from '../store/store';
 import {useRouter} from 'next/router';
@@ -45,11 +45,11 @@ const handleSubmit=async (e)=>
     e.stopPropagation();
     e.preventDefault();
 
-    toast.success("Order Placed Successfully", {
-      position: toast.POSITION.TOP_CENTER
-  });
+  //   toast.success("Order Placed Successfully", {
+  //     position: toast.POSITION.TOP_CENTER
+  // });
 
-  // cogoToast.success('Order Placed Successfully');
+  cogoToast.success('Order Placed Successfully');
 
     const cancel="false";
     const id=await createOrder({...FormData,foodname,total,PaymentMethod,cancel});
@@ -127,7 +127,7 @@ const handleInput=(e)=>
         {/* <div onClick={checkHandle}>Click</div> */}
       </form>
       {/* <Toaster/> */}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </Modal>
   );
 }
