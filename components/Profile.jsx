@@ -1,7 +1,5 @@
 import { useRouter } from "next/router";
-// import toast, { Toaster } from 'react-hot-toast';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 import { client } from "../lib/client"
 import { useEffect, useState } from "react";
 import css from "../styles/Profile.module.css";
@@ -10,9 +8,7 @@ export default function Profile(props) {
     const router = useRouter();
     const [flag, setflag] = useState(false);
     const handleLogout = (e) => {
-        toast.success("Logout Successfull", {
-            position: toast.POSITION.TOP_CENTER
-        })
+        toast.success("Logout Successfull")
         localStorage.removeItem('email');
         router.push("/Login");
     }
@@ -102,8 +98,8 @@ export default function Profile(props) {
                     }
                 </div>
             </div>
-            <ToastContainer />
-            {/* <Toaster /> */}
+
+            <Toaster />
         </div>
     )
 }

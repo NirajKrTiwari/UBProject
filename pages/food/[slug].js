@@ -6,9 +6,7 @@ import LeftArrow from '../../assets/arrowLeft.png';
 import RightArrow from '../../assets/arrowRight.png';
 import { useState } from 'react';
 import { useStore } from '../../store/store';
-// import toast,{Toaster} from 'react-hot-toast';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast,{Toaster} from 'react-hot-toast';
 import Marquee from '../../components/Marquee';
 import Head from "next/head";
 import favicon from "../favicon.ico"
@@ -23,9 +21,7 @@ export default function Food({ food }){
     
     const addToCart = () => {
         addFood({...food,price: food.price,quantity: quantity})
-        toast.success("Added to Cart", {
-      position: toast.POSITION.TOP_CENTER
-  })
+        toast.success("Added to Cart")
     }
 
     console.log(food)
@@ -64,8 +60,7 @@ export default function Food({ food }){
                         Add to Cart
                     </div>
                 </div>
-                {/* <Toaster/> */}
-                <ToastContainer />
+                <Toaster/>
             </div>
         </Layout>
     )

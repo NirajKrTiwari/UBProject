@@ -8,9 +8,7 @@ import Head from "next/head";
 import favicon from "./favicon.ico"
 import { createRegistration } from "../lib/registration";
 import { useRouter } from 'next/router';
-// import toast, { Toaster } from 'react-hot-toast';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -135,9 +133,7 @@ export default function Register() {
         if (name != "" && email != "" && phone.length == 10 && password != "" && agreeCheck != false) {
             setFormData({ name, email, password, phone })
             // console.log(FormData);
-            toast.success("Registered Successfully", {
-                position: toast.POSITION.TOP_CENTER
-            });
+            toast.success("Registered Successfully");
             e.stopPropagation();
             e.preventDefault();
             const res = await createRegistration(FormData);
@@ -148,15 +144,11 @@ export default function Register() {
             if(phone.length!=10)
             {
                 e.preventDefault();
-                toast.error("Enter valid Phone number", {
-                    position: toast.POSITION.TOP_CENTER
-                });
+                toast.error("Enter valid Phone number");
             }
             else{
             e.preventDefault();
-            toast.error("Fill up all the details", {
-                position: toast.POSITION.TOP_CENTER
-            });
+            toast.error("Fill up all the details");
             }
         }
 
@@ -239,8 +231,7 @@ export default function Register() {
                     </div>
                 </form>
             </div>
-            <ToastContainer />
-            {/* <Toaster /> */}
+            <Toaster />
         </Layout>
     )
 } 
