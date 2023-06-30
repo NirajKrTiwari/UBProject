@@ -3,7 +3,9 @@ import { Modal, useMantineTheme } from '@mantine/core';
 import css from '../styles/OrderModal.module.css';
 import { useEffect, useState } from 'react';
 import { createOrder } from '../lib/orderHandler';
-import toast,{Toaster} from 'react-hot-toast';
+// import toast,{Toaster} from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useStore } from '../store/store';
 import {useRouter} from 'next/router';
 // import { useDisclosure } from '@mantine/hooks';
@@ -31,19 +33,15 @@ function close()
 // }
 
 const resetCart=useStore((state)=>state.resetCart)
-const [disabled, setDisabled] = useState(false);
 const handleSubmit=async (e)=>
 {
-  
-  // if(check==1){
-    // console.log("valid"+check);
     e.stopPropagation();
     e.preventDefault();
-    setDisabled(true);
+    toast.success("Order Placed Successfully", {
+      position: toast.POSITION.TOP_CENTER
+  });
     const cancel="false";
     const id=await createOrder({...FormData,foodname,total,PaymentMethod,cancel});
-    console.log(id);
-    toast.success("Order Placed Successfully");
     resetCart();
     {
         typeof window != 'undefined' && localStorage.setItem('order',id);
@@ -85,6 +83,10 @@ const handleInput=(e)=>
   setFormData({...FormData,[e.target.name]:e.target.value})
   // setFormData({[e.target.name]:e.target.value})
 }
+// const checkHandle=(e)=>
+// {
+//   toast.success("Hiii");
+// }
 
   return (
     <Modal
@@ -111,8 +113,10 @@ const handleInput=(e)=>
         </select>
         <span>You will Pay <span>Rs. {total}</span> on delivery</span>
         <button  onClick={handleSubmit} type='submit' className={css.btn}>Place Order</button>
+        {/* <div onClick={checkHandle}>Click</div> */}
       </form>
-      <Toaster/>
+      {/* <Toaster/> */}
+      <ToastContainer />
     </Modal>
   );
 }

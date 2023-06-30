@@ -47,6 +47,7 @@
     flex-direction: row;
     align-items: end;
     margin: 0 auto;
+    margin-top: 5rem;
     justify-content: center;
 }
 .icon{

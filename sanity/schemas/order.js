@@ -42,7 +42,7 @@ export default
         },
         {
             name: 'method',
-            title: 'Payment Method(0:Cod,1:Paid)',
+            title: 'Payment Method(0:COD, 1:Online)',
             type: 'number',
         },
         {
@@ -61,7 +61,7 @@ export default
         },
         {
             name: 'status',
-            title: 'Status (Type: 1. COD,2. Cooking,3. Onway,4. Delivered)',
+            title: 'Status (Type: 1.Payment, 2. Cooking, 3. Onway, 4. Delivered)',
             type: 'number',
         },
         {

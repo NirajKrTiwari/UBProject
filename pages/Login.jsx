@@ -8,7 +8,9 @@ import Head from "next/head";
 import favicon from "./favicon.ico"
 import { client } from "../lib/client"
 import { useRouter } from "next/router";
-import toast, { Toaster } from 'react-hot-toast';
+// import toast, { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Profile from "../components/Profile";
 
 export default function Login({ user, order}) {
@@ -79,12 +81,16 @@ export default function Login({ user, order}) {
             // console.log("User Found");
             e.preventDefault();
             typeof window !== 'undefined' && localStorage.setItem('email', emailData);
-            toast.success("Successfully Logged In")
+            toast.success("Successfully Logged In", {
+                position: toast.POSITION.TOP_CENTER
+            })
             router.push("/");
         }
         else {
             e.preventDefault();
-            toast.error("Incorrect Email or Password")
+            toast.error("Incorrect Email or Password", {
+                position: toast.POSITION.TOP_CENTER
+            })
             // console.log("User Not Found");
         }
         // console.log(typeof window !== 'undefined' && localStorage.getItem('email'));
@@ -146,7 +152,8 @@ export default function Login({ user, order}) {
                     <Profile user={user} order={order}/>
                 </div>
             }
-            <Toaster />
+            <ToastContainer />
+            {/* <Toaster /> */}
         </Layout>
     )
 }
