@@ -41,8 +41,9 @@ export default function Register() {
              setRegistration(registration);
          });
      }, [query]);
-     console.log('registrations', registration[0])
-     console.log(registration.length)
+
+    //  console.log('registrations', registration[0])
+    //  console.log(registration.length)
 
      
     // email validation
@@ -72,7 +73,7 @@ export default function Register() {
         }
     }
     const [phoneLen, setPhoneLen] = useState(true);
-    
+
     function isPhone(event) {
         if(event.target.length<1 || event.target.value.length==10)
         {
@@ -155,17 +156,20 @@ export default function Register() {
     useEffect(
         ()=>
         {
-          // console.log(FormData)
+   
         },[FormData]
       )
       
-    const handleSubmit = async (e) => {   
+    const handleSubmit = async (e) => {  
+        console.log(email)
+        console.log(FormData)
         if(registration.length>0)
         {
             e.stopPropagation();
             e.preventDefault();
             cogoToast.error("Email Alredy Exists")
-        }     
+            document.getElementById("agree").checked = false;
+        }
         else if (name != "" && email != "" && phone.length == 10 && password != "" && agreeCheck != false) {
             setFormData({ name, email, password, phone })
             // console.log(FormData);
@@ -173,19 +177,14 @@ export default function Register() {
             e.stopPropagation();
             e.preventDefault();
             const res = await createRegistration(FormData);
-            // console.log(res);
+            // // console.log(res);
             router.push('/Login');
         }
         else {
-            // if(phone.length!=10)
-            // {
-            //     e.preventDefault();
-            //     cogoToast.error("Enter valid Phone number");
-            // }
-            // else{
             e.preventDefault();
+            document.getElementById("agree").checked = false;
             cogoToast.error("Fill up all the details");
-            // }
+            
         }
 
     }
@@ -197,7 +196,7 @@ export default function Register() {
         if (e.target.checked == true) {
             setagreeCheck(true);
             setFormData({ name, email, password, phone });
-            // console.log(FormData);
+            console.log(FormData);
         }
         else {
             setagreeCheck(false);
