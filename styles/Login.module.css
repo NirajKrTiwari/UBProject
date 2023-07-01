@@ -180,3 +180,10 @@
             font-size: 2rem;
         }
     }
+
+    .warningMsg{
+        margin-top: -28px;
+        color: red;
+        margin-left: 6px;
+        font-size: 0.9rem;
+        }
