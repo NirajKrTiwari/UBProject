@@ -5,7 +5,7 @@ export default function Loader() {
         <div className={css.loaderContainer}>
             <PacmanLoader
                 className={css.loader}
-                color={"#F54748     "}
+                color={"#F54748"}
                 // loading={loader}
                 // cssOverride={override}
                 size={30}
