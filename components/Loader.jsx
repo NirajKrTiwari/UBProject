@@ -12,7 +12,6 @@ export default function Loader() {
                 aria-label="Loading Spinner"
                 data-testid="loader"
             />
-            Loading
         </div>
     )
 }
