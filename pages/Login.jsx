@@ -61,14 +61,18 @@ export default function Login({ user, order }) {
         }
     }, [emailStyle, passwordStyle]);
 
-
+    // Loader
     const [loader, setloader] = useState(false);
     useEffect(() => {
         setloader(true);
         setTimeout(() => {
             setloader(false);
-        }, 5000)
+        }, 3000)
     }, [])
+    // Loader
+
+
+
     const defaultOptions = {
         loop: true,
         autoplay: true,
