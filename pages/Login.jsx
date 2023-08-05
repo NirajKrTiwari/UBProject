@@ -10,7 +10,7 @@ import { client } from "../lib/client"
 import { useRouter } from "next/router";
 // import toast, { Toaster } from 'react-hot-toast';
 import Profile from "../components/Profile";
-import Loader from "../components/Loader.jsx";
+import Loader from "../components/Loader";
 import cogoToast from 'cogo-toast';
 
 
