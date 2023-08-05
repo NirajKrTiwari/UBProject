@@ -19,6 +19,7 @@
 }
 
 .LogoutBtn {
+    margin-right: 0rem !important;
     padding: 0rem 1rem;
     width: max-content;
     border-radius: 1rem;
