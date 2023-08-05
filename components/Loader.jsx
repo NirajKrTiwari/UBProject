@@ -2,7 +2,7 @@
 import css from "../styles/Login.module.css"
 export default function () {
     return (
-        <div className={}>
+        <div className="">
             {/* <PacmanLoader
                 className={css.loader}
                 color={"#F54748     "}
