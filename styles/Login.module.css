@@ -48,6 +48,9 @@
 {
     display: none;
 }
+
+
+
 .loginbox {
     position: relative;
     width: fit-content;
@@ -72,6 +75,8 @@
     margin-top: 3rem;
     justify-content: center;
 }
+
+
 .icon{
     margin: 0;
 }
