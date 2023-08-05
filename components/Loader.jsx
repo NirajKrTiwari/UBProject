@@ -1,4 +1,4 @@
-import PacmanLoader from "react-spinners/PacmanLoader";
+// import PacmanLoader from "react-spinners/PacmanLoader";
 import css from "../styles/Login.module.css"
 export default function () {
     return (
