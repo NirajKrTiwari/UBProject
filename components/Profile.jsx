@@ -3,6 +3,9 @@ import toast, { Toaster } from 'react-hot-toast';
 import { client } from "../lib/client"
 import { useEffect, useState } from "react";
 import css from "../styles/Profile.module.css";
+import {UilSignout} from "@iconscout/react-unicons"
+
+
 
 export default function Profile(props) {
     const router = useRouter();
@@ -22,7 +25,10 @@ export default function Profile(props) {
         <div className={css.container}>
             <div className={css.title}>
                 <h1>Profile</h1>
-                <button className={css.LogoutBtn} onClick={handleLogout}>Logout</button>
+                <div>
+                    
+                </div>
+                <button className={css.LogoutBtn} onClick={handleLogout}>Logout<UilSignout size={25} color="white" /></button>
             </div>
             {
                 props.user.map((user) => 

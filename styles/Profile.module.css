@@ -29,6 +29,10 @@
     background-color: var(--themeRed);
     margin: 1.4rem;
     margin-left: 3rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 3px;
 }
 
 .LogoutBtn:active {

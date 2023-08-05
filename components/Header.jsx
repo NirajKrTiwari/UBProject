@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { UilReceipt } from '@iconscout/react-unicons';
 import {UilUser} from '@iconscout/react-unicons';
 
+
 import SideBar from './SideBar';
 export default function Header() {
   const items = useStore((state) => state.cart.food.length);
