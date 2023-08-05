@@ -1,9 +1,9 @@
-import PacmanLoader from "react-spinners/PacmanLoader";
+// import PacmanLoader from "react-spinners/PacmanLoader";
 import css from "../styles/Login.module.css"
 export default function () {
     return (
         <div className={css.LoaderContainer}>
-            <PacmanLoader
+            {/* <PacmanLoader
                 className={css.loader}
                 color={"#F54748     "}
                 // loading={loader}
@@ -11,7 +11,7 @@ export default function () {
                 size={30}
                 aria-label="Loading Spinner"
                 data-testid="loader"
-            />
+            /> */}
         </div>
     )
 }
