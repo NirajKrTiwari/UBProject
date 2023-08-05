@@ -1,7 +1,9 @@
 import PacmanLoader from "react-spinners/PacmanLoader";
 import css from "../styles/Login.module.css"
+import Layout  from "./Layout";
 export default function Loader() {
     return (
+        <Layout>
         <div className={css.loaderContainer}>
             <PacmanLoader
                 className={css.loader}
@@ -13,5 +15,6 @@ export default function Loader() {
                 data-testid="loader"
             />
         </div>
+        </Layout>
     )
 }
