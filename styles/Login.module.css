@@ -5,7 +5,7 @@
         filter: hue-rotate(360deg)
     }
 }
-.LoaderContainer
+.loaderContainer
 {
     position: absolute;
     top: 0;
