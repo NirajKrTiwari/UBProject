@@ -4,13 +4,14 @@
     /* gap: 3rem; */
     margin-top: 0rem;
 }
-.category
-{
+
+.category {
     color: #6d2626;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 0;
 }
+
 .heading {
     display: flex;
     flex-direction: column;
@@ -31,32 +32,36 @@
 }
 
 .ImageWrapper {
-    height: 12rem;
-    width: 16rem;
+    /* height: 12rem;
+    width: 16rem; */
+    width: 21vw;
+    height: 30vh;
     position: relative;
     overflow: hidden;
     border-radius: 1rem;
 }
 
 .menu {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     row-gap: 2rem;
     align-items: center;
     /* justify-content: space-evenly; */
     justify-content: center;
     margin-top: 2rem;
+    grid-auto-rows: minmax(10px, auto);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .food {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 0.5rem;
     font-size: 1rem;
     font-weight: bold;
-    margin-right:1rem;
+    /* margin-right:1rem; */
 }
 
 .food>:nth-child(2),
@@ -75,27 +80,32 @@
 @media only screen and (max-width: 1024px) and (min-width: 601px) {
     .ImageWrapper {
         /* width: 19rem; */
-        height: 34vw;
-        width: 44vw;
+
+        height: 17vh;
+        width: 29vw;
+
     }
 
     .food>:nth-child(2),
     .food>:nth-child(3) {
         padding-left: 1rem;
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
-    .menu
-    {
+
+    .menu {
         justify-content: space-evenly;
+        grid-auto-rows: minmax(10px, auto);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media only screen and (max-width: 600px) {
+
     .ImageWrapper {
         /* height: 9rem;
         width: 10rem; */
-        height: 37vw;
-        width: 40vw;
+        height: 18vh;
+        width: 40vw;    
     }
 
     .food>:nth-child(2),
@@ -112,25 +122,30 @@
         gap: 0rem;
         margin-top: 0rem;
     }
+
     .heading>:nth-child(1) {
-        font-size:12px;
+        font-size: 12px;
         margin-bottom: 1rem;
     }
-    
+
     .heading>:nth-child(2),
     .heading>:nth-child(3) {
         font-size: 16px;
     }
+
     .menu {
-            row-gap: 1rem;
-        }
-        .menu
-    {
+        row-gap: 1rem;
+        grid-auto-rows: minmax(10px, auto);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu {
         justify-content: space-evenly;
     }
-        .food{
-            /* max-width: 160px; */
-            max-width: 40vw;;
-            margin: 0;
-        }
+
+    .food {
+        /* max-width: 160px; */
+        /* max-width: 40vw; */
+        margin: 0;
+    }
 }
