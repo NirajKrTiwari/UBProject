@@ -4,104 +4,57 @@ import css from '../styles/OrderModal.module.css';
 import { useEffect, useState } from 'react';
 import { createOrder } from '../lib/orderHandler';
 
-
-// import toast,{Toaster} from 'react-hot-toast';
-
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
-
 import cogoToast from 'cogo-toast';
 
 import { useStore } from '../store/store';
-import {useRouter} from 'next/router';
-// import { useDisclosure } from '@mantine/hooks';
+import { useRouter } from 'next/router';
 
-export default function OrderModal({opened,setOpened,PaymentMethod}){
-const router =useRouter();
-const total= typeof window != 'undefined' && localStorage.getItem('total');
-const theme = useMantineTheme();
-const [FormData, setFormData] = useState({});
-// const {close} = useDisclosure(false);
-const foodname= typeof window != 'undefined' && localStorage.getItem('foodname');
-const [Name, setName] = useState("");
-const [Email, setEmail] = useState("");
-const [Phone, setPhone] = useState("");
-const [Address, setAddress] = useState("");
-function close()
-{
-  setOpened(false);
-}
+export default function OrderModal({ opened, setOpened, PaymentMethod }) {
+  const router = useRouter();
+  const total = typeof window != 'undefined' && localStorage.getItem('total');
+  const theme = useMantineTheme();
+  const [FormData, setFormData] = useState({});
+  const foodname = typeof window != 'undefined' && localStorage.getItem('foodname');
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Phone, setPhone] = useState("");
+  const [Address, setAddress] = useState("");
+  function close() {
+    setOpened(false);
+  }
 
-// const handleInput=(e)=>
-// {
+const [disabled, setDisabled] = useState(false)
+  const resetCart = useStore((state) => state.resetCart);
 
-//     setFormData({...FormData,[e.target.name]:e.target.value})
-// }
-
-const resetCart=useStore((state)=>state.resetCart)
-const handleSubmit=async (e)=>
-{
+  const handleSubmit = async (e) => {
+    if (FormData.name == undefined || FormData.email == undefined || FormData.phone == undefined || FormData.address == undefined) {
+      cogoToast.error("Please fill all the details");
+      return;
+    }
+    setDisabled(true);
     e.stopPropagation();
     e.preventDefault();
+    cogoToast.loading("Please wait");
 
-  //   toast.success("Order Placed Successfully", {
-  //     position: toast.POSITION.TOP_CENTER
-  // });
-
-  // cogoToast.success('Order Placed Successfully');
-  cogoToast.loading("Please wait");
-
-    const cancel="false";
-    const id=await createOrder({...FormData,foodname,total,PaymentMethod,cancel});
+    const cancel = "false";
+    const id = await createOrder({ ...FormData, foodname, total, PaymentMethod, cancel });
     resetCart();
     {
-        typeof window != 'undefined' && localStorage.setItem('order',id);
+      typeof window != 'undefined' && localStorage.setItem('order', id);
     }
     router.push(`/order/${id}`)
 
-  // }
-  // else{
-  //   toast.error("Invalid Mobile Number");
-  // }
+  }
 
-}
+  useEffect(
+    () => {
+    }, [FormData]
+  )
 
-useEffect(
-  ()=>
-  {
-    // console.log(FormData)
-  },[FormData]
-)
-
-const handleInput=(e)=>
-{
-  // if(e.target.name=='name')
-  // {
-  //   setName(e.target.value);
-  // }
-  // else if(e.target.name=='email')
-  // {
-  //   setEmail(e.target.value);
-  // }
-  // else if(e.target.name=='phone')
-  // {
-  //   setPhone(e.target.value);
-  // }
-  // else if(e.target.name=='address')
-  // {
-  //   setAddress(e.target.value);
-  // }
-  setFormData({...FormData,[e.target.name]:e.target.value})
-  // setFormData({[e.target.name]:e.target.value})
-}
-// const checkHandle=(e)=>
-// {
-//   //  e.stopPropagation();
-//   //   e.preventDefault();
-//   cogoToast.success('Order Placed Successfully');
-//   // cogoToast.loading("Please wait");
-// }
+  const handleInput = (e) => {
+    setFormData({ ...FormData, [e.target.name]: e.target.value })
+  }
+  const emailId=typeof window !== 'undefined' && localStorage.getItem('email');
 
   return (
     <Modal
@@ -109,29 +62,24 @@ const handleInput=(e)=>
       overlayOpacity={0.55}
       overlayBlur={3}
       opened={opened}
-      // onClose={setOpened==null}
       onClose={close}
     >
-      {/* Modal content */}
-      <form action=""  className={css.formContainer}>
+      <form action="" className={css.formContainer}>
         <input onChange={handleInput} type="text" name='name' placeholder='Name' required />
-        <input onChange={handleInput} type="email" name='email' placeholder='Email' required/>
-        <input onChange={handleInput} type="number" name='phone' placeholder='Phone Number' required/>
-        {/* <textarea name="address"  rows={3}></textarea> */}
+        <input onChange={handleInput} type="email" name='email' placeholder='Email' value={emailId} required />
+        <input onChange={handleInput} type="number" name='phone' placeholder='Phone Number' required />
         <select onChange={handleInput} name="address" id="address" placeholder='Address' required>
-            <option value="" disabled selected hidden>Address...</option>
-            <option value="Academic Block">Academic Block</option>
-            <option value="Girl's Hostel">Girls Hostel</option>
-            <option value="Boy's Hostel Block-1">Boys Hostel Block-1</option>
-            <option value="Boy's Hostel Block-2">Boys Hostel Block-2</option>
-            <option value="Boy's Hostel Block-3">Boys Hostel Block-3</option>
+          <option value="" disabled selected hidden>Address...</option>
+          <option value="Academic Block">Academic Block</option>
+          <option value="Girl's Hostel">Girls Hostel</option>
+          <option value="Boy's Hostel Block-1">Boys Hostel Block-1</option>
+          <option value="Boy's Hostel Block-2">Boys Hostel Block-2</option>
+          <option value="Boy's Hostel Block-3">Boys Hostel Block-3</option>
+          <option value="Boy's Hostel Block-3">Boys Hostel Block-4</option>
         </select>
         <span>You will Pay <span>Rs. {total}</span> on delivery</span>
-        <button  onClick={handleSubmit} type='submit' className={css.btn}>Place Order</button>
-        {/* <div onClick={checkHandle}>Click</div> */}
+        <button disabled={disabled}onClick={handleSubmit} type='submit' className={css.btn}>Place Order</button>
       </form>
-      {/* <Toaster/> */}
-      {/* <ToastContainer /> */}
     </Modal>
   );
 }
