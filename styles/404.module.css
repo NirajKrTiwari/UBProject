@@ -1,0 +1,36 @@
+
+.errorContainer {
+    padding: 0 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+  }
+  
+  .errorHeading {
+    font-size: 2rem;
+    color: #ff0000;
+  }
+  
+  .errorMessage {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  .backLink {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+/*   
+  .backLink:hover {
+    background-color: #0056b3;
+  } */
+  
