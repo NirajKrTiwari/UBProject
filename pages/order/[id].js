@@ -13,16 +13,44 @@ import CancelPopUp from "../../components/CancelPopUp.jsx";
 import Head from "next/head";
 import favicon from "../favicon.ico"
 
-export const getServerSideProps = async ({ params }) => {
-    const query = `*[_type=='order' && _id== '${params.id}']`;
-    const order = await client.fetch(query);
+// export const getServerSideProps = async ({ params }) => {
+//     const query = `*[_type=='order' && _id== '${params.id}']`;
+//     const order = await client.fetch(query);
     
-    return {
-        props: {
-            order: order[0]
+//     return {
+//         props: {
+//             order: order[0]
+//         }
+//     }
+// }
+
+export const getServerSideProps = async ({ params }) => {
+    try {
+        const query = `*[_type=='order' && _id== '${params.id}']`;
+        const order = await client.fetch(query);
+
+        if (!order || order.length === 0) {
+            return {
+                notFound: true, // Return a 404 page if the data is not found
+            };
         }
+
+        return {
+            props: {
+                order: order[0],
+            },
+        };
+    } catch (error) {
+        console.error("Error fetching data:", error);
+
+        return {
+            props: {
+                order: null, // You can set order to null or handle the error in your component
+            },
+        };
     }
-}
+};
+
 
 export default function Orders({ order }) {
     let time= typeof window != 'undefined' && localStorage.getItem('time');
