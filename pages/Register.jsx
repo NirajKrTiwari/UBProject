@@ -24,7 +24,7 @@ export default function Register() {
 
     const [nameCheck, setnameCheck] = useState(false);
     const [phoneCheck, setphoneCheck] = useState(false);
-   
+
     // Data Storing in State
     const [name, setNameData] = useState("");
     const [email, setEmailData] = useState("");
@@ -33,19 +33,19 @@ export default function Register() {
 
 
 
-     //sanity search query with the help of EmailData
-     const query = `*[_type == "user" && email == "${email}"]`;
-     const [registration, setRegistration] = useState([]);
-     useEffect(() => {
-         client.fetch(query).then((registration) => {
-             setRegistration(registration);
-         });
-     }, [query]);
+    //sanity search query with the help of EmailData
+    const query = `*[_type == "user" && email == "${email}"]`;
+    const [registration, setRegistration] = useState([]);
+    useEffect(() => {
+        client.fetch(query).then((registration) => {
+            setRegistration(registration);
+        });
+    }, [query]);
 
     //  console.log('registrations', registration[0])
     //  console.log(registration.length)
 
-     
+
     // email validation
 
     function isEmptyName(event) {
@@ -75,12 +75,10 @@ export default function Register() {
     const [phoneLen, setPhoneLen] = useState(true);
 
     function isPhone(event) {
-        if(event.target.length<1 || event.target.value.length==10)
-        {
+        if (event.target.length < 1 || event.target.value.length == 10) {
             setPhoneLen(true);
         }
-        else
-        {
+        else {
             setPhoneLen(false)
         }
         if (event.target.value != "") {
@@ -134,15 +132,14 @@ export default function Register() {
         else {
             document.getElementsByClassName("email2")[0].style.display = 'block';
         }
-        if(phoneLen==true)
-        {
+        if (phoneLen == true) {
             document.getElementById("warning").style.display = 'none';
         }
-        else{
+        else {
             document.getElementById("warning").style.display = 'block';
         }
 
-    }, [emailStyle, passwordStyle, phoneCheck, nameCheck,phoneLen]);
+    }, [emailStyle, passwordStyle, phoneCheck, nameCheck, phoneLen]);
 
     const defaultOptions = {
         loop: true,
@@ -154,17 +151,15 @@ export default function Register() {
     };
 
     useEffect(
-        ()=>
-        {
-   
-        },[FormData]
-      )
-      
-    const handleSubmit = async (e) => {  
+        () => {
+
+        }, [FormData]
+    )
+
+    const handleSubmit = async (e) => {
         console.log(email)
         console.log(FormData)
-        if(registration.length>0)
-        {
+        if (registration.length > 0) {
             e.stopPropagation();
             e.preventDefault();
             cogoToast.error("Email Alredy Exists")
@@ -184,7 +179,7 @@ export default function Register() {
             e.preventDefault();
             document.getElementById("agree").checked = false;
             cogoToast.error("Fill up all the details");
-            
+
         }
 
     }
@@ -253,12 +248,13 @@ export default function Register() {
                         <input id="phone" type="text" onChange={isPhone} required />
                         <label className="phone" >Phone Number</label>
                     </div>
-                    <p className={css.warningMsg} id="warning" style={{display: 'none'}}>Enter Valid Phone Number</p>
-                    <input type="checkbox" id="agree" name="agree" onChange={isAgree} required></input>&nbsp;Confirm you want to register<br></br>
+                    <p className={css.warningMsg} id="warning" style={{ display: 'none' }}>Enter Valid Phone Number</p>
+                    <div className={css.confirmationBox}>
+                        <input type="checkbox" id="agree" name="agree" onChange={isAgree} required></input>&nbsp;Confirm you want to register<br></br>
+                    </div>
                     <button style={{ marginTop: '1rem' }} className={css.loginButton} onClick={handleSubmit} type="submit">Register</button>
-
                     <div className={css.registerlink}>
-                        <p>Already have an account? <Link href="/Login"><span className={css.refer}>Login</span></Link></p>
+                        <p>Already have an account? <Link href="/Login"><span className={css.refer} style={{ color: "var(--themeRed)" }}>Login</span></Link></p>
                     </div>
                 </form>
             </div>

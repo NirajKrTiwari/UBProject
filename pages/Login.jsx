@@ -159,7 +159,7 @@ export default function Login({ user, order }) {
 
                                         <button className={css.loginButton} type="submit" onClick={handleSubmit}>Login</button>
                                         <div className={css.registerlink}>
-                                            <p>Don&apos;t have an account? <Link href="/Register"><span className={css.refer}>Register</span></Link></p>
+                                            <p>Don&apos;t have an account? <Link href="/Register"><span className={css.refer} style={{color:"var(--themeRed)"}}>Register</span></Link></p>
                                         </div>
                                     </form>
                                 </div>
