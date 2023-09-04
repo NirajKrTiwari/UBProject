@@ -9,7 +9,7 @@ export default function Custom500() {
     // Redirect to the home page after a delay (e.g., 3 seconds)
     const redirectTimer = setTimeout(() => {
       router.push('/');
-    }, 3000);
+    }, 3000000);
 
     return () => clearTimeout(redirectTimer);
   }, [router]);

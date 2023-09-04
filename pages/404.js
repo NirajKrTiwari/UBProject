@@ -7,7 +7,7 @@ export default function Custom404() {
     return (
         <>
             <div className={styles.errorContainer}>
-                <h1 className={styles.errorHeading}>404 - Page Not Found</h1>
+                <h1 className={styles.errorHeading}>Error - Page Not Found</h1>
                 <p className={styles.errorMessage}>
                     The page you are looking for might have been removed or does not exist.
                 </p>
@@ -20,7 +20,7 @@ export default function Custom404() {
                     setTimeout(() => {
                         router.push('/')
                     }
-                        , 2000)
+                        , 3000)
                 }
             </Script>
         </>
