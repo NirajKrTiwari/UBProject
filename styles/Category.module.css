@@ -53,6 +53,8 @@
 .image
 {
     border-radius: 50%;
+    object-fit: cover;
+    background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 729px){
