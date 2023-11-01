@@ -11,7 +11,6 @@ import { UilTrash } from '@iconscout/react-unicons';
 import { client } from '../lib/client';
 import Head from "next/head";
 import favicon from "./favicon.ico"
-
 export default function Cart (){
     const router=useRouter();
     const CartData= useStore((state)=>state.cart);
@@ -138,7 +137,7 @@ export default function Cart (){
                             </tr>
                         </thead>
                         <tbody className={css.tbody}>
-                            {CartData.food.length>0 && 
+                            {CartData.food.length>0?(
                                 CartData.food.map((food,i)=>{
                                     const src=urlFor(food.image).url()
                                     return(
@@ -171,6 +170,13 @@ export default function Cart (){
                                         </td>
                                     </tr>
                                 )}
+                            )
+                            ):(
+                                <tr rowSpan={2} style={{height:'20vh'}}>
+                                    <td colSpan={5} style={{textAlign:'center'}} className={css.emptyMsg}>
+                                        No Items in Cart
+                                    </td>
+                                </tr>
                             )}
                         </tbody>
                     </table>

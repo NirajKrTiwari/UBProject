@@ -10,10 +10,14 @@ import Marquee from "../components/Marquee";
 import Head from "next/head";
 import favicon from "./favicon.ico"
 import Category from "../components/Category";
+import NextTopLoader from 'nextjs-toploader';
 
 export default function Home({ub}) {
   return (
+    <>
+    <NextTopLoader />
       <Layout>
+        
       <div className={css.container}>
         <Head>
           <title>Under Belly</title>
@@ -32,6 +36,7 @@ export default function Home({ub}) {
         </main>
       </div>
       </Layout>
+      </>
   );
 }
 
