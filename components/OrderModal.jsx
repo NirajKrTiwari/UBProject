@@ -91,7 +91,7 @@ export default function OrderModal({ opened, setOpened, PaymentMethod }) {
         <div className={css.confirmationBox}>
           {/* <input className={css.agree} type="checkbox" id="agree" name="agree" onChange={handleInput} required/> */}
           <input type="checkbox" className={css.agree} id="agreeCheckbox" name="agree" onChange={handleInput} required></input>
-          <label for="agreeCheckbox" className={css.toggle}></label>
+          <label htmlFor="agreeCheckbox" className={css.toggle}></label>
           &nbsp;&nbsp;Please Confirm
         </div>
         <button disabled={disabled} onClick={handleSubmit} type='submit' className={css.btn}>Place Order</button>
