@@ -33,7 +33,7 @@
 }
 .formContainer>span
 {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 .btn
 {
@@ -55,3 +55,56 @@
     width: 34vw;
     padding: 30px 20px;
 }
+
+.confirmationBox
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+.agree {
+    display: none;
+  }
+  
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 2.5rem;
+    height: 1.5rem;
+  }
+  
+  .toggle:before,
+  .toggle:after {
+    content: "";
+    position: absolute;
+  }
+  
+  .toggle:before {
+    left: 0;
+    background-color: #dd1c1c; /* Background color when off */
+    width: 100%;
+    height: 100%;
+    border-radius: 17px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle:after {
+    left: 0;
+    background-color: #e2e2e2; /* Background color when on */
+    width: 50%;
+    height: 100%;
+    border-radius: 17px;
+    transition: margin 0.3s ease;
+  }
+  
+  .agree:checked + .toggle:before {
+    background-color: #4CAF50;
+  }
+  
+  .agree:checked + .toggle:after {
+    margin-left: 50%;
+  }
+  

@@ -15,18 +15,16 @@ export default function OrderModal({ opened, setOpened, PaymentMethod }) {
   const theme = useMantineTheme();
   const [FormData, setFormData] = useState({});
   const foodname = typeof window != 'undefined' && localStorage.getItem('foodname');
-  const [Name, setName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Phone, setPhone] = useState("");
-  const [Address, setAddress] = useState("");
+
   function close() {
     setOpened(false);
   }
 
-const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(false)
   const resetCart = useStore((state) => state.resetCart);
 
   const handleSubmit = async (e) => {
+    console.log(FormData);
     if (FormData.name == undefined || FormData.email == undefined || FormData.phone == undefined || FormData.address == undefined) {
       cogoToast.error("Please fill all the details");
       return;
@@ -35,7 +33,6 @@ const [disabled, setDisabled] = useState(false)
     e.stopPropagation();
     e.preventDefault();
     cogoToast.loading("Please wait");
-
     const cancel = "false";
     const id = await createOrder({ ...FormData, foodname, total, PaymentMethod, cancel });
     resetCart();
@@ -48,14 +45,23 @@ const [disabled, setDisabled] = useState(false)
 
   useEffect(
     () => {
+
     }, [FormData]
   )
+  const emailId = typeof window !== 'undefined' && localStorage.getItem('email');
 
   const handleInput = (e) => {
-    setFormData({ ...FormData, [e.target.name]: e.target.value })
-  }
-  const emailId=typeof window !== 'undefined' && localStorage.getItem('email');
+    if (e.target.name == "agree") {
+      setFormData({ ...FormData, email: emailId })
+      console.log(FormData);
+      //disable edit input name email
+    }
+    else {
+      setFormData({ ...FormData, [e.target.name]: e.target.value })
+      console.log(FormData);
+    }
 
+  }
   return (
     <Modal
       overlayColor={theme.colorScheme === 'dark' ? theme.colors.dark[9] : theme.colors.gray[2]}
@@ -66,7 +72,11 @@ const [disabled, setDisabled] = useState(false)
     >
       <form action="" className={css.formContainer}>
         <input onChange={handleInput} type="text" name='name' placeholder='Name' required />
-        <input onChange={handleInput} type="email" name='email' placeholder='Email' value={emailId} required />
+        {
+          emailId ? (<input onChange={handleInput} type="email" name='email' id="email" placeholder='Email' value={emailId} readOnly={true} required />)
+           : (<input onChange={handleInput} type="email" name='email' id="email" placeholder='Email' required />)
+
+        }
         <input onChange={handleInput} type="number" name='phone' placeholder='Phone Number' required />
         <select onChange={handleInput} name="address" id="address" placeholder='Address' required>
           <option value="" disabled selected hidden>Address...</option>
@@ -78,7 +88,13 @@ const [disabled, setDisabled] = useState(false)
           <option value="Boy's Hostel Block-3">Boys Hostel Block-4</option>
         </select>
         <span>You will Pay <span>Rs. {total}</span> on delivery</span>
-        <button disabled={disabled}onClick={handleSubmit} type='submit' className={css.btn}>Place Order</button>
+        <div className={css.confirmationBox}>
+          {/* <input className={css.agree} type="checkbox" id="agree" name="agree" onChange={handleInput} required/> */}
+          <input type="checkbox" className={css.agree} id="agreeCheckbox" name="agree" onChange={handleInput} required></input>
+          <label for="agreeCheckbox" className={css.toggle}></label>
+          &nbsp;&nbsp;Please Confirm
+        </div>
+        <button disabled={disabled} onClick={handleSubmit} type='submit' className={css.btn}>Place Order</button>
       </form>
     </Modal>
   );

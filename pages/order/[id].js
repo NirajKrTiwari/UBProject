@@ -123,6 +123,7 @@ export default function Orders({ order }) {
                 <div className={css.details}>
                     <div><span>Order ID</span><span>{order._id}</span></div>
                     <div><span>Customer Name</span><span>{order.name}</span></div>
+                    <div><span>Email</span><span>{order.email}</span></div>
                     <div><span>Phone</span><span>{order.phone}</span></div>
                     <div><span>Address</span><span>{order.address}</span></div>
                     <div><span>Method</span><span>{order.method === 0 ? 'Cash on Delivery' : 'Online Payment(Paid)'}</span></div>

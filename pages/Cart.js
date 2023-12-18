@@ -137,6 +137,7 @@ export default function Cart (){
                             </tr>
                         </thead>
                         <tbody className={css.tbody}>
+                            
                             {CartData.food.length>0?(
                                 CartData.food.map((food,i)=>{
                                     const src=urlFor(food.image).url()
